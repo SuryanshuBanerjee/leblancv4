@@ -1,0 +1,24 @@
+\begin{tabular}{lllrrrrlrrl}
+\toprule
+Model & Metric & Contrast & Pairs & A (\%) & B (\%) & $\Delta$ (pp) & 95\% CI & Disc.\ B/A & $q$ & Verdict \\
+\midrule
+gpt-oss-20b & sec.\ fails & generic vs plain & 129 & 55.8 & 54.3 & -1.6 & [-10.1, 7.0] & 12/14 & 0.895 & \textit{no} \\
+gpt-oss-20b & sec.\ fails & targeted vs plain & 133 & 56.4 & 57.9 & +1.5 & [-5.2, 8.3] & 9/7 & 0.895 & \textit{no} \\
+gpt-oss-20b & sec.\ fails & targeted vs generic & 129 & 54.3 & 57.4 & +3.1 & [-6.2, 12.4] & 16/12 & 0.729 & \textit{unclear} \\
+gpt-oss-20b & flagged & generic vs plain & 168 & 12.5 & 8.3 & -4.2 & [-10.1, 0.6] & 4/11 & 0.213 & \textit{unclear} \\
+gpt-oss-20b & flagged & targeted vs plain & 168 & 12.5 & 10.1 & -2.4 & [-7.1, 0.6] & 1/5 & 0.358 & \textit{no} \\
+gpt-oss-20b & flagged & targeted vs generic & 168 & 8.3 & 10.1 & +1.8 & [-4.2, 8.3] & 9/6 & 0.729 & \textit{no} \\
+gemini-3.5-flash-lite & sec.\ fails & generic vs plain & 135 & 60.7 & 57.8 & -3.0 & [-11.9, 5.2] & 7/11 & 0.666 & \textit{no} \\
+gemini-3.5-flash-lite & sec.\ fails & targeted vs plain & 131 & 62.6 & 51.1 & -11.5 & [-22.3, -1.5] & 3/18 & 0.009 & \textit{yes} \\
+gemini-3.5-flash-lite & sec.\ fails & targeted vs generic & 131 & 59.5 & 51.1 & -8.4 & [-15.4, -2.3] & 0/11 & 0.009 & \textit{yes} \\
+gemini-3.5-flash-lite & flagged & generic vs plain & 168 & 13.1 & 7.1 & -6.0 & [-13.1, -0.6] & 0/10 & 0.009 & \textit{yes} \\
+gemini-3.5-flash-lite & flagged & targeted vs plain & 166 & 13.3 & 9.6 & -3.6 & [-9.8, 0.6] & 1/7 & 0.193 & \textit{unclear} \\
+gemini-3.5-flash-lite & flagged & targeted vs generic & 166 & 7.2 & 9.6 & +2.4 & [-3.6, 9.0] & 7/3 & 0.516 & \textit{no} \\
+deepseek-v4.1-flash & sec.\ fails & generic vs plain & 134 & 53.7 & 41.8 & -11.9 & [-20.2, -5.2] & 1/17 & 0.003 & \textit{yes} \\
+deepseek-v4.1-flash & sec.\ fails & targeted vs plain & 135 & 54.1 & 48.1 & -5.9 & [-14.1, 0.7] & 4/12 & 0.193 & \textit{unclear} \\
+deepseek-v4.1-flash & sec.\ fails & targeted vs generic & 134 & 41.8 & 47.8 & +6.0 & [0.8, 11.2] & 13/5 & 0.193 & \textit{unclear} \\
+deepseek-v4.1-flash & flagged & generic vs plain & 168 & 12.5 & 7.1 & -5.4 & [-12.5, 0.0] & 0/9 & 0.014 & \textit{yes} \\
+deepseek-v4.1-flash & flagged & targeted vs plain & 168 & 12.5 & 7.7 & -4.8 & [-13.1, 3.0] & 5/13 & 0.193 & \textit{unclear} \\
+deepseek-v4.1-flash & flagged & targeted vs generic & 168 & 7.1 & 7.7 & +0.6 & [-5.4, 6.0] & 5/4 & 1.000 & \textit{no} \\
+\bottomrule
+\end{tabular}

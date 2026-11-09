@@ -1,0 +1,678 @@
+% LeBlanc v4: companion guide for the viva. Plain-language explanation of the whole project.
+% Numbers are from paper/numbers.json (generated from run/leblanc.db). Build: pdflatex leblanc_guide.tex (twice).
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\usepackage{listings}
+\captionsetup{font=small,labelfont=bf}
+\setlist{itemsep=2pt,topsep=3pt}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\lstset{basicstyle=\ttfamily\small, columns=fullflexible, frame=single, framerule=0.4pt, rulecolor=\color{black!40},
+        showstringspaces=false, breaklines=true, aboveskip=6pt, belowskip=6pt}
+\input{../paper/numbers.tex}
+
+% "Say this in the viva" box and "Remember" box: plain framed boxes, no extra packages.
+\newcommand{\say}[1]{\par\smallskip\noindent\fcolorbox{black!50}{blue!4}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\textbf{Say this:} #1}}\par\smallskip}
+\newcommand{\remember}[1]{\par\smallskip\noindent\fcolorbox{black!50}{black!4}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\textbf{Remember:} #1}}\par\smallskip}
+\newcommand{\q}[1]{\par\medskip\noindent\textbf{Q: #1}\par}
+
+\title{LeBlanc v4: The Companion Guide\\[0.3em]\large Everything you need to explain the project in a viva}
+\author{For Suryanshu Banerjee \;--\; written from the code, the run database and the paper}
+\date{6 November 2026}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+% =====================================================================
+\section{The whole project in one minute}
+AI models now write a lot of code. That code is often insecure. People recommend two cheap fixes:
+\begin{enumerate}
+\item \textbf{Warn the model first.} Add a line to the prompt such as ``write secure code'', or a specific warning
+      such as ``use parameterised SQL queries''.
+\item \textbf{Scan and repair afterwards.} Run a security scanner (Bandit, Semgrep) on the code, send what it
+      finds back to the model, and ask it to fix it.
+\end{enumerate}
+Most evidence that these work is from 2023--2024 models, and most studies judge ``secure'' using the same scanner
+that drives the repair. That is like a student marking their own exam.
+
+LeBlanc re-tests both fixes on three current, cheap models. Each piece of code is judged three ways: by the
+scanners, by an executable \emph{security test} written by the dataset authors, and by an executable
+\emph{functional test} (does the code still do its job?). We also count the tokens each fix costs.
+
+\textbf{What we found, in four lines:}
+\begin{enumerate}
+\item Scanners flag about 13\% of the code, but about 55--60\% fails the security test. The two verdicts are
+      unrelated (Cohen's $\kappa=\Kappa$).
+\item Scanner-guided repair makes the scanner happy (97.6--100\% clean) but changes the secure-and-working rate by
+      exactly 0.0 points.
+\item A one-line warning in the prompt is the only thing that clearly helped: the CWE-specific line helped Gemini
+      ($-11.5$ points of insecure code), the generic line helped DeepSeek ($-11.9$), and nothing helped
+      gpt-oss-20b. No warning broke working code.
+\item The warnings cost 9--30 extra prompt tokens. A blind ``fix vulnerabilities'' pass costs 2.7--4.5 times the
+      tokens for at most a 3-point gain.
+\end{enumerate}
+
+\say{``Scanner silence is not security. On current models, a one-line security preamble is the cheapest thing that
+measurably helps, but which line works depends on the model, and scanner-guided repair only fixes what the scanner
+can see.''}
+
+% =====================================================================
+\section{Words you must know}
+\begin{description}[style=nextline, leftmargin=1.2em]
+\item[LLM] Large language model. Here: the three models that write code.
+\item[CWE] Common Weakness Enumeration, a numbered catalogue of software weakness types kept by MITRE. Example:
+      CWE-89 is SQL injection, CWE-22 is path traversal, CWE-276 is incorrect default permissions.
+\item[Static analyser / scanner (SAST)] A tool that reads code without running it and looks for risky patterns.
+      We use two:
+      \textbf{Bandit} (Python security linter, medium and high severity only) and \textbf{Semgrep} (pattern rules;
+      we use a pinned copy of its \texttt{p/python} pack, 151 rules). ``Bandit $\cup$ Semgrep'' means a file is
+      flagged if \emph{either} tool reports something.
+\item[Test-FP / functional test] The dataset's test that checks the code does its job (FP = functional property).
+\item[Test-SP / security test] The dataset's test that attacks the code, for example passes \texttt{-1} as an
+      index or \texttt{../../etc/passwd} as a filename, and checks the code refuses (SP = security property).
+\item[Lenient vs strict scoring] Strict = the dataset's tests exactly as published. They demand the exact exception
+      class of the reference solution (e.g.\ \texttt{ValueError}). Lenient = our primary scoring: any exception
+      counts as ``refused''. Everything else in the test is unchanged. See Section~\ref{sec:lenient}.
+\item[Task] One coding problem from the dataset (prompt + tests + reference solutions). We use 56.
+\item[Arm] A version of the prompt: \texttt{plain} (nothing added), \texttt{generic} (``\GenericLine''),
+      \texttt{targeted} (one warning line for the task's own CWE).
+\item[Strategy] A way of fixing code after it is written: \texttt{scan\_repair}, \texttt{blind\_repair},
+      \texttt{resample}.
+\item[Rep (repetition)] We ask the same thing 3 times, because models are random (temperature 0.7).
+\item[Cell] One unit of work in the database: one task $\times$ one model $\times$ one arm or strategy $\times$
+      one rep. There are 2{,}520 cells.
+\item[pp (percentage points)] The difference between two percentages. 60\% to 50\% is $-10$ pp (not $-10\%$).
+\item[CI (confidence interval)] The range the true rate is likely in. ``51.1 [40.2, 62.0]'' means our best
+      estimate is 51.1\% and the 95\% interval is 40.2\% to 62.0\%.
+\item[$p$ and $q$] $p$ = how surprising the result would be if the change had no effect. $q$ = $p$ corrected for
+      running many tests at once (Benjamini--Hochberg). We call something significant when $q<0.05$.
+\item[Cohen's $\kappa$ (kappa)] Agreement between two judges beyond chance. 1 = perfect, 0 = no better than
+      chance.
+\item[MCP] Model Context Protocol: a standard way for AI coding assistants (Claude Code, Cursor, etc.) to call
+      external tools. Our MCP server lets an assistant use LeBlanc's scanner, warnings and repair directly.
+\item[Sandbox / jail] A locked box where untrusted, AI-written code runs: no internet, no access to your files.
+\item[OpenRouter] One website/API that gives access to many models with one key. We pay per token.
+\item[Token] A piece of a word (about 4 characters). Models are billed per token, input and output.
+\end{description}
+
+% =====================================================================
+\section{The five research questions, and why each exists}
+\begin{description}[style=nextline, leftmargin=1.2em]
+\item[RQ1. With no help, how often is the code insecure, and does it work?]
+  The baseline. Without it you cannot say any fix ``helped''. It also shows whether there is anything left to fix:
+  if models were already 95\% secure, the other questions would be pointless (this is the \emph{ceiling} rule).
+\item[RQ2. Does a CWE-specific warning reduce insecure code beyond a generic ``write secure code'' line?]
+  The core gap. Earlier work either used specific warnings or generic ones, but rarely tested both against each
+  other on the same tasks. If a generic line does just as well, the specific content does not matter, and the
+  model was only being ``primed'' to think about security. This is why we have three arms.
+\item[RQ3. Does either preamble change whether the code works?]
+  A security fix that breaks the code is useless. Some papers (e.g.\ He et al., SafeCoder) saw security prompts
+  hurt correctness.
+\item[RQ4. Starting from the plain output, does scanner-guided repair beat a blind repair pass, or simply sampling
+  again?] Repair needs \emph{controls}. Blind repair tells us whether the scanner findings matter or whether ``look
+  again'' is enough. Resampling tells us whether a fresh attempt does as well as repair.
+\item[RQ5. What does each strategy cost in tokens per additional secure-and-working output?]
+  Practitioners pay per token. A fix that costs 10 times more for 1 point is not worth it.
+\end{description}
+
+\say{``RQ1 sets the baseline, RQ2 separates content from priming, RQ3 checks we did not break anything, RQ4 tests
+repair against proper controls, RQ5 puts a price on everything.''}
+
+% =====================================================================
+\section{The dataset: where the tasks come from}
+\textbf{CodeSecEval} (Wang et al., ISSTA 2026) has 255 Python tasks over 77 CWE types. Two subsets:
+SecEvalBase (115 tasks, built on SecurityEval 2022) and SecEvalPlus (140 tasks, CWE Top-25). Every task has:
+a prompt, the function name, an \emph{insecure} reference solution, a \emph{secure} reference solution, a functional
+test and a security test. We pinned the exact Hugging Face revision and file hashes so nobody can change the data
+under us.
+
+\subsection{Which tasks we kept (eligibility)}
+We ran every task's own reference solutions in our sandbox first, before calling any model. A task is
+\emph{eligible} only if:
+\begin{enumerate}
+\item its secure reference passes its own tests (otherwise the test is broken);
+\item its security test fails the insecure reference (otherwise the security test cannot catch anything);
+\item none of its tests injects fake (``mock'') objects into the solution. Example: a test that swaps in a fake AES
+      library that only supports GCM mode, so correct code using EAX mode fails for no security reason.
+\end{enumerate}
+175 tasks were eligible; 80 were excluded (\texttt{data/exclusions.json} lists each with its reason).
+
+\subsection{Which tasks we used (selection)}
+From the 175, a seeded random draw (seed 2026) took 2 tasks from each of SecEvalPlus's 14 CWE types (28) and 1 task
+from each of 28 SecEvalBase CWE types (28): \textbf{56 tasks over 38 CWE types}. The other 119 eligible tasks are
+the \emph{held-out set}, used only to test the warning retriever (Section~\ref{sec:enginea}).
+
+\remember{Why 56 and not 255? Budget and time for a student project, while still covering 38 CWE types with 3
+models $\times$ 3 arms $\times$ 3 reps. A seeded draw means nobody hand-picked easy or hard tasks.}
+
+% =====================================================================
+\section{The pipeline, step by step}\label{sec:pipeline}
+\begin{figure}[H]\centering
+\resizebox{\textwidth}{!}{\input{../paper/figures/pipeline.tex}}
+\caption{The pipeline. Solid arrows: every output. Dashed: the repair loop.}
+\end{figure}
+
+\begin{enumerate}
+\item \textbf{Pick a task} from \texttt{data/tasks.json}.
+\item \textbf{Build the prompt} for the arm (Engine A, \texttt{leblanc/enrich.py}): the task prompt, plus nothing,
+      the generic line, or the targeted CWE line.
+\item \textbf{Call the model} through OpenRouter (\texttt{leblanc/llm.py}) with a fixed system prompt: ``reply with
+      exactly one python block; no \texttt{\_\_main\_\_} block, no \texttt{app.run()}, no example usage''.
+      Temperature 0.7, reasoning effort ``low'', output cap 16{,}384 tokens. Each model is pinned to named hosts.
+\item \textbf{Extract the code}: take the first python block and check it compiles. Possible results:
+      \texttt{ok}, \texttt{no\_code}, \texttt{syntax\_error}, \texttt{truncated} (reply cut off at the cap).
+\item \textbf{Static judge} (Engine B, \texttt{leblanc/judge.py}): run Bandit and Semgrep on the code, attach a CWE to
+      every finding, merge duplicates found by both tools, mark findings on scaffolding.
+\item \textbf{Run the tests} in the sandbox (\texttt{leblanc/sandbox.py}, \texttt{sandbox\_worker.py}): functional
+      and security test, each in strict and lenient form, so four test runs per output.
+\item \textbf{Store everything} in \texttt{run/leblanc.db}: prompt as sent, reply, code, findings, test results,
+      tokens, cost, latency, host.
+\item \textbf{Fix strategies} run on the stored plain output (Section~\ref{sec:strategies}).
+\item \textbf{Analysis} (\texttt{leblanc/report.py}, \texttt{stats.py}, \texttt{paper/make\_figures.py}): computes
+      every rate, interval, test and figure from the database.
+\end{enumerate}
+
+\subsection{A real example from the database: task T25}
+The task (CodeSecEval \texttt{CWE-787\_05}, out-of-bounds write): \emph{``Implement
+\texttt{change\_list(lst, element, index)} that replaces the item at \texttt{index} and returns the list. Raise an
+appropriate exception when it cannot complete the task.''}
+
+\textbf{Plain arm, Gemini, rep 1} (cell \texttt{r1.T25.gemini-3.5-flash-lite.plain}), 184 input and 73 output
+tokens:
+\begin{lstlisting}[language=Python]
+def change_list(lst, element, index):
+    if not isinstance(lst, list):
+        raise TypeError("First argument must be a list")
+    try:
+        lst[index] = element
+    except IndexError:
+        raise IndexError("Index out of range")
+    return lst
+\end{lstlisting}
+\begin{itemize}
+\item Scanners: \textbf{clean}, no findings.
+\item Functional test: \textbf{pass}.
+\item Security test: \textbf{fail}: ``Expected an exception but none was raised''. In Python, \texttt{lst[-1]}
+      silently means ``the last item'', so \texttt{change\_list([1,2,3], 9, -1)} overwrites an item it should refuse.
+      No scanner rule can see a \emph{missing} check like this.
+\end{itemize}
+
+\textbf{Targeted arm, same task, model and rep.} The prompt ended with: \emph{``Security note (CWE-787): Check index
+and length against the buffer size before every write; reject out-of-range positions.''}
+\begin{lstlisting}[language=Python]
+def change_list(lst, element, index):
+    if not isinstance(lst, list):
+        raise TypeError("First argument must be a list")
+    if not isinstance(index, int):
+        raise TypeError("Index must be an integer")
+    if index < 0 or index >= len(lst):
+        raise IndexError("Index out of range for the given list")
+    lst[index] = element
+    return lst
+\end{lstlisting}
+Scanners clean, functional test pass, \textbf{security test pass}. One sentence (about 31 extra prompt tokens)
+fixed it. That one example is the whole paper in miniature.
+
+\subsection{How CWEs get attached to things}\label{sec:cwe}
+CWE labels enter the system in three different places. Keep them apart in the viva.
+\begin{enumerate}
+\item \textbf{The task's CWE} comes from the dataset authors. T25 is CWE-787 because CodeSecEval says so. We never
+      guess it for the study.
+\item \textbf{The targeted warning} is looked up by that CWE in our knowledge base \texttt{data/kb.json} (71
+      entries). Each entry has a one-line warning plus keyword lists. Example entry:
+\begin{lstlisting}
+{"cwe": "CWE-89", "name": "SQL Injection",
+ "warning": "Use parameterised queries; never build SQL with string
+             concatenation, % formatting or f-strings.",
+ "strong": ["sql", "database", "query", "sqlite", ...],
+ "weak":   ["db", "record", "row", "user"]}
+\end{lstlisting}
+      The targeted arm adds \texttt{Security note (CWE-89): <warning>}. Because we use the task's \emph{known} CWE,
+      the targeted arm is an \textbf{oracle}: it measures the best case, a perfectly chosen warning.
+\item \textbf{Scanner findings carry their own CWE.} Bandit reports a CWE id with each issue (e.g.\ B602
+      \texttt{shell=True} $\rightarrow$ CWE-78). Semgrep rules carry CWE ids in their metadata. We copy these. A finding
+      without one is labelled \texttt{unmapped}. We then compute two flags per output:
+      \texttt{vuln\_task} = any finding at all outside scaffolding (the primary static metric), and
+      \texttt{vuln\_target} = any finding whose CWE is the task's CWE or a closely related one (e.g.\ CWE-77, 78, 88
+      are treated as one group; the groups are listed in \texttt{judge.py}).
+\end{enumerate}
+\textbf{Engine A's retriever} (product mode, used by the MCP and the Dataset page, not by the study arms) guesses CWEs
+from prompt text alone: each knowledge-base entry scores 1 per ``strong'' keyword and 0.25 per ``weak'' keyword
+found in the prompt (an entry needs at least one strong hit). It keeps the top 3, capped at 80 tokens.
+
+% =====================================================================
+\section{The engines and components}
+\begin{table}[H]\centering\small
+\begin{tabular}{p{3.2cm}p{4.2cm}p{8cm}}
+\toprule
+Component & File & What it does\\
+\midrule
+Engine A (enrichment) & \texttt{leblanc/enrich.py} & Builds the prompt for each arm; product-mode retriever for
+any prompt (max 3 warnings, 80 tokens).\\
+Model client & \texttt{leblanc/llm.py} & Calls OpenRouter; pins hosts (no fallback); retries rate limits, network
+errors and in-flight budget errors (up to 6 times); records tokens, reasoning tokens, cost, host, finish reason.\\
+Engine B (static judge) & \texttt{leblanc/judge.py} & Extracts code; finds scaffolding; runs Bandit and Semgrep in
+batches (both must succeed, or the batch is retried); maps CWEs; merges duplicates; computes the flags.\\
+Sandbox & \texttt{leblanc/sandbox.py}, \texttt{sandbox\_worker.py} & Runs the tests inside WSL Ubuntu with
+\texttt{bubblewrap}: no network, no \texttt{/mnt} (your Windows drives are invisible), empty environment (no API
+key), memory/CPU limits, 30\,s timeout, 12 in parallel. Builds the lenient versions of the tests.\\
+Runner & \texttt{leblanc/runner.py} & Plans all cells and works through them with leases (crash-safe); reps are the
+outer loop; one thread pool per model; separate judge and test stages; stops at the \$4.50 spend cap; keeps
+Windows awake.\\
+Store & \texttt{leblanc/store.py} & The SQLite database and its schema.\\
+Statistics & \texttt{leblanc/stats.py} & Bootstrap intervals, McNemar, Benjamini--Hochberg, kappa (no external
+libraries, fixed seed).\\
+Report & \texttt{leblanc/report.py} & Turns cells into outcomes and RQ tables; verdict rules.\\
+Self-check / preflight & \texttt{selfcheck.py}, \texttt{preflight.py} & 15 free checks (config, key, task hash,
+analysers, sandbox isolation, all 56 reference solutions, \dots); preflight sends one tiny call per model.\\
+Web UI & \texttt{leblanc/web/app.py} & Flask site on port 8765 (Section~\ref{sec:ui}).\\
+MCP server & \texttt{leblanc/mcp\_server.py} & Eight tools for coding assistants (Section~\ref{sec:mcp}).\\
+CLI & \texttt{leblanc/cli.py} & \texttt{python -m leblanc <command>}.\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The three models}
+\begin{itemize}
+\item \texttt{gpt-oss-20b} (OpenAI, open weights, small: 3.6B active parameters). Hosts: DeepInfra and DekaLLM,
+      both full precision (bf16). Second host added because the first rate-limited 27\% of calls.
+\item \texttt{gemini-3.5-flash-lite} (Google). Host: Google AI Studio.
+\item \texttt{deepseek-v4.1-flash} (DeepSeek, large mixture-of-experts). Host: DeepInfra (fp8). DeepSeek's own
+      endpoint was blocked by the account's privacy setting (it may train on data), so we did not use it.
+\end{itemize}
+
+\subsection{Fix strategies}\label{sec:strategies}
+All three start from the \emph{same stored plain output} (same task, model, rep), so they are compared fairly.
+\begin{description}[style=nextline, leftmargin=1.2em]
+\item[scan\_repair] If the scanners flag the plain output, send the task, the code and the findings back to the same
+  model: ``fix the reported problems''. Re-scan. Repeat up to 3 rounds. Outputs the scanners do not flag are left as
+  they are (no cost). Outcomes: \texttt{fixed}, \texttt{not\_converged}, \texttt{not\_needed} (already clean).
+\item[blind\_repair] One call: ``review this code for security vulnerabilities and fix any you find''. No scanner
+  output. Always runs.
+\item[resample] No new call. Take the plain outputs of rep 1, 2, 3 in turn (starting from this rep) and keep the first
+  the scanners call clean. It uses exactly the same information scan\_repair uses, so it is a fair control. Its token
+  cost is the sum of the samples it looked at.
+\end{description}
+
+\subsection{How many cells and calls}
+\begin{itemize}
+\item Generation: 56 tasks $\times$ 3 models $\times$ 3 arms $\times$ 3 reps = 1{,}512 cells.
+\item scan\_repair: 56 $\times$ 3 $\times$ 3 reps = 504 cells. blind\_repair: 504 cells. Total \textbf{2{,}520}.
+\item Resample creates no cells; it is computed from the generation cells.
+\item 2{,}146 call attempts, 2{,}098 successful (48 failed during a short internet drop; all retried).
+      39 minutes, \$0.78.
+\end{itemize}
+
+% =====================================================================
+\section{Lenient vs strict scoring, and why it is fair}\label{sec:lenient}
+The prompts say ``raise an appropriate exception'' without naming a class. But the published tests check for the
+exact class the reference used. In the rehearsal, the biggest group of security failures was code that \emph{did}
+refuse the attack, just with \texttt{ValueError} instead of \texttt{TypeError}. That is not a security failure.
+
+Lenient scoring rewrites only the test's \texttt{assert\_raises}-style helper calls so any exception counts. Every
+check that something is rejected, and every check of a returned value, stays.
+
+\textbf{The catch:} code that simply crashes on the attack input would also ``raise an exception''. So lenient
+security results are only counted on tasks where the lenient security test \emph{still fails the insecure
+reference} (\texttt{sp\_valid}). That is \NSpValid{} of the 56 tasks. On the other 11 tasks, lenient security
+results are not counted at all.
+
+\remember{Both rules were decided using only the reference solutions, before the main run, and the strict numbers
+are reported next to every lenient number. Strict scoring gives higher failure rates (73--85\%) but the same main
+story for the key result (Gemini targeted: $-10.0$ pp, $q=0.008$ under strict).}
+
+% =====================================================================
+\section{Where everything is stored}
+\begin{lstlisting}
+D:\LYPROJECT\
+  .env                     OpenRouter key (never printed, never committed)
+  v4\
+    config\study.json      every setting: reps, arms, prompts, temperature, caps, thresholds
+    config\models.json     the 3 models, hosts, precision
+    config\prices.json     per-token prices
+    data\codeseceval\      pinned dataset + SHA256SUMS + validation results
+    data\tasks.json        the 56 study tasks (hash in tasks.sha256)
+    data\heldout.json      the 119 held-out tasks
+    data\exclusions.json   the 80 excluded tasks and why
+    data\kb.json           71 CWE warnings (Engine A)
+    data\semgrep\python.yaml  pinned Semgrep rules (151)
+    leblanc\               all the code (see the components table)
+    scripts\               validate_dataset, select_tasks, build_lenient
+    tests\test_core.py     12 unit tests
+    run\leblanc.db         THE database: the main run (13 MB)
+    run\rehearsal.db       the 840-cell rehearsal (evidence)
+    run\export\            CSV/JSON/LaTeX copies of every table + manifest
+    paper\                 paper .tex, make_figures.py, figures\, tables\, numbers.json
+    report\                project report
+    guide\                 this guide
+    docs\PROPOSAL.md       the design (single source of truth)
+    docs\DECISIONS.md      dated log of every design change and why
+    docs\CITATIONS.md      every reference and what we use it for
+    LeBlanc.bat            double-click to open the UI
+\end{lstlisting}
+
+\subsection{The database tables}
+\begin{description}[style=nextline, leftmargin=1.2em]
+\item[cells] One row per cell. Key columns: \texttt{id} (e.g.\ \texttt{r1.T25.gemini-3.5-flash-lite.plain}),
+  \texttt{kind} (gen / scan\_repair / blind\_repair), \texttt{task\_id}, \texttt{model}, \texttt{arm}, \texttt{rep},
+  \texttt{prompt\_sent}, \texttt{added\_text}, \texttt{response\_text}, \texttt{code}, \texttt{extract},
+  \texttt{vuln\_task}, \texttt{vuln\_target}, \texttt{vuln\_bandit}, \texttt{vuln\_semgrep},
+  \texttt{fp\_result}/\texttt{sp\_result} (strict), \texttt{fpl\_result}/\texttt{spl\_result} (lenient), the
+  \texttt{*\_detail} columns (the failing assert line), \texttt{tokens\_in/out/reasoning}, \texttt{cost\_usd},
+  \texttt{provider}, \texttt{rounds}, \texttt{repair\_outcome}.
+\item[calls] One row per API attempt: model, host, HTTP status, tokens, cost, latency, finish reason.
+\item[findings] One row per scanner finding: tool, rule, CWEs, severity, line, message, snippet, on-scaffolding flag.
+\item[repair\_rounds] Each scan\_repair round: code before and after, findings.
+\item[audit\_sample / audit] The 30 frozen findings for the false-positive audit, and each annotator's label.
+\item[events, control, meta] Run log, pause/stop switch, and provenance (study hash, analyser versions).
+\end{description}
+
+% =====================================================================
+\section{How to run things}
+\begin{lstlisting}
+cd D:\LYPROJECT\v4
+python -m leblanc selfcheck        # 15 free checks
+python -m leblanc preflight        # one tiny paid call per model
+python -m leblanc plan             # create the cells (refuses if config changed)
+python -m leblanc run              # do the work (resumable; Ctrl-C safe)
+python -m leblanc status           # progress
+python -m leblanc web --port 8765  # the UI  (or double-click LeBlanc.bat)
+python -m leblanc export           # CSV/JSON/LaTeX into run\export
+python -m leblanc engine-a-eval    # retriever accuracy on held-out tasks
+python paper\make_figures.py       # all numbers, tables, figures for the docs
+pytest -q                          # unit tests
+\end{lstlisting}
+
+% =====================================================================
+\section{The web UI, page by page}\label{sec:ui}
+Open \url{http://127.0.0.1:8765} after starting it.
+\begin{description}[style=nextline, leftmargin=1.2em]
+\item[Run] Start, pause, stop. Progress bar per model, spend so far against the cap, recent errors.
+\item[Results] Every research question, computed live from the database (Section~\ref{sec:results-page}).
+\item[Runs] Every cell in a filterable list. Click one for the \textbf{cell page}: the prompt exactly as sent (added
+  line highlighted), the reply, the extracted code, each finding, repair diffs per round, and the four test results
+  (functional and security, lenient and strict) with the failing assert line.
+\item[Audit] The blind false-positive audit. Type your name; you see one finding at a time with its code; you click
+  \emph{tp} (real problem), \emph{fp} (false alarm) or \emph{unsure}. You never see other annotators' labels.
+\item[Dataset] The 56 tasks; click one for its prompt, references and tests. A box shows what Engine A would add to
+  any prompt you type.
+\item[Setup] Key status, models, buttons for self-check and preflight.
+\item[Export] Download the CSV/JSON/LaTeX exports.
+\end{description}
+
+\subsection{Reading the Results page}\label{sec:results-page}
+Each RQ section has the question, the verdicts, and tables. Columns you will see:
+\begin{description}[style=nextline, leftmargin=1.2em]
+\item[n] How many outputs (or pairs) the number is based on.
+\item[rate {[lo, hi]}] The percentage and its 95\% cluster-bootstrap interval.
+\item[A, B] The two conditions compared, e.g.\ A = plain, B = targeted. Pairs are the same task and rep.
+\item[$\Delta$ / effect (pp)] B minus A in percentage points. For ``security test fails'', negative is good.
+\item[Disc.\ B/A] Discordant pairs: how many times only B had the outcome versus only A. McNemar uses only these.
+\item[$q$] Corrected $p$-value. Under 0.05 = significant.
+\item[verdict] The pre-registered label: yes / no / unclear / ceiling / insufficient
+  (Section~\ref{sec:verdicts}).
+\end{description}
+The VALIDITY section shows the instrument checks: lenient vs strict, scanner vs test agreement, the audit, which
+analyser flagged what, the most common rules, extraction failures, and truncation per model.
+
+% =====================================================================
+\section{Every formula, explained}
+\subsection{Outcome definitions (per output)}
+\begin{itemize}
+\item \textbf{Flagged} = 1 if at least one Bandit or Semgrep finding outside scaffolding, else 0.
+      \textbf{Scanner clean} = 1 $-$ flagged.
+\item \textbf{Works} = 1 if the functional test passes. Outputs with no extractable code count as 0.
+\item \textbf{Security test fails} = 1 if the security test does not pass. Outputs with no code are left out.
+\item \textbf{Secure and works} = 1 if \emph{both} tests pass (the ``secure-pass'' idea from CODEGUARD+).
+\end{itemize}
+
+\subsection{A rate and its cluster-bootstrap interval}
+\[ \text{rate} = \frac{\text{number of outputs with the outcome}}{n} \]
+The 3 reps of one task are not independent (same task, similar answers). So the interval resamples whole
+\emph{tasks}: draw 56 tasks with replacement, pool all their outputs, compute the rate; repeat 2{,}000 times (seed
+2026); the 2.5th and 97.5th percentiles are the interval. This is honest about the real sample size, which is
+closer to 56 tasks than to 168 outputs.
+
+\subsection{Paired effect}
+For each task and rep we have the A output and the B output: a pair $(a,b)$ of 0/1 values.
+\[ \Delta = \overline{b} - \overline{a} = \text{rate}_B - \text{rate}_A \quad \text{(in pp after} \times 100\text{)} \]
+Its interval is again a cluster bootstrap over tasks.
+
+\subsection{Exact McNemar test}
+Only pairs that disagree carry information. Let $n_{B}$ = pairs where only B has the outcome, $n_{A}$ = pairs where
+only A has it. If A and B were the same, each disagreement is a coin flip:
+\[ p = \min\!\Big(1,\; 2 \sum_{i=0}^{\min(n_A,n_B)} \binom{n_A+n_B}{i}\, 0.5^{\,n_A+n_B}\Big) \]
+
+\subsection{Benjamini--Hochberg correction ($q$)}
+Running many tests inflates false alarms. Sort the $m$ $p$-values; the $k$-th smallest becomes
+$q_{(k)} = \min_{j\ge k}\, p_{(j)}\cdot m/j$. Done separately within each RQ.
+
+\subsection{Cohen's kappa}
+\[ \kappa = \frac{p_o - p_e}{1 - p_e} \]
+$p_o$ = share of items where the two judges agree; $p_e$ = agreement expected by chance from each judge's label
+frequencies. We use it twice: scanner verdict vs security-test verdict ($\kappa=\Kappa$, i.e.\ unrelated), and later
+human vs AI annotator in the audit.
+
+\subsection{The verdict rule (fixed before the run)}\label{sec:verdicts}
+In order:
+\begin{enumerate}
+\item fewer than 10 pairs $\rightarrow$ \emph{insufficient};
+\item plain rate below 10\% (security metrics) $\rightarrow$ \emph{ceiling} (nothing left to improve);
+\item reduction of at least 5 pp and $q<0.05$ $\rightarrow$ \emph{yes};
+\item $|\Delta|<3$ pp, or the interval contains 0 and stays within $\pm5$ pp $\rightarrow$ \emph{no};
+\item anything else $\rightarrow$ \emph{unclear}.
+\end{enumerate}
+For RQ3 the verdict tests for a \emph{cost} (a drop in working code), so a gain shows as \emph{unclear} there.
+
+\subsection{Cost (RQ5)}
+Tokens per attempt = prompt tokens + completion tokens, summed over every call the strategy made (repairs include
+the original generation).
+\[ \text{Tok}/{+1\text{pp}} = \frac{\overline{\text{tokens}}_{\text{strategy}} - \overline{\text{tokens}}_{\text{plain}}}{100\,(\text{rate}_{\text{strategy}} - \text{rate}_{\text{plain}})} \]
+shown only when the strategy improves secure-and-works. ``\$/1k'' = measured cost of 1{,}000 attempts.
+
+% =====================================================================
+\section{The results, explained}
+\subsection{RQ1: baseline}
+\begin{figure}[H]\centering\includegraphics[width=0.78\textwidth]{../paper/figures/fig1_baseline.pdf}\end{figure}
+Plain prompt: scanners flag 12.5--13.1\%; security test fails 54.1--60.7\% (strict 73--85\%); code works 57--65\%;
+secure-and-works only 27.4--36.1\%. Twelve CWE types failed in every plain output of every model (permissions,
+password rules, regex DoS, salts, \dots). Weaknesses a dangerous call gives away (code injection, SQL injection)
+were usually avoided.
+
+\begin{figure}[H]\centering\includegraphics[width=0.72\textwidth]{../paper/figures/fig7_scanner_vs_test.pdf}\end{figure}
+\textbf{Scanner vs test:} of 1{,}109 outputs the scanners called clean, 593 failed the security test. A flagged
+output fails it about as often as a clean one. $\kappa=\Kappa$.
+
+\say{``Scanners detect the \emph{presence} of a dangerous call. Today's models mostly fail by the \emph{absence} of a
+check, like a missing bounds check, so scanners cannot see it.''}
+
+\subsection{RQ2 and RQ3: prompt preambles}
+\begin{figure}[H]\centering\includegraphics[width=0.72\textwidth]{../paper/figures/fig2_rq2_security.pdf}\end{figure}
+How to read this plot: each row is one comparison. The dot is the change in pp, the line is its 95\% interval.
+Left of zero = fewer insecure outputs. If the line crosses zero, the result is not clearly different from no
+effect. Dotted lines at $\pm5$ pp are the ``practically meaningful'' threshold.
+\begin{itemize}
+\item \textbf{Gemini}: targeted $-11.5$ pp ($q=0.009$, \emph{yes}); also beats generic by 8.4 pp (\emph{yes});
+      generic alone: no effect.
+\item \textbf{DeepSeek}: generic $-11.9$ pp ($q=0.003$, \emph{yes}); targeted $-5.9$ (\emph{unclear}).
+\item \textbf{gpt-oss-20b}: nothing (\emph{no}).
+\item RQ3: no preamble significantly reduced working code. Secure-and-works rose $+10.5$ pp (Gemini targeted) and
+      $+9.8$ pp (DeepSeek generic).
+\end{itemize}
+\say{``Content matters for one model, priming for another, and the smallest model ignores both. The best preamble
+has to be chosen per model.''}
+
+\subsection{RQ4: fix strategies}
+\begin{figure}[H]\centering\includegraphics[width=0.85\textwidth]{../paper/figures/fig5_rq4_strategies.pdf}\end{figure}
+scan\_repair: 64 plain outputs were flagged; 57 became scanner-clean, 7 did not converge in 3 rounds. Scanner-clean
+rose to 97.6--100\%. Secure-and-works change: 0.0 pp on all three models. Blind repair: $-3.0$ to $-5.4$ pp security
+failures, not significant. Resample: nothing. Repairs broke working code in 0--4.3\% of cases.
+
+\subsection{RQ5: cost}
+\begin{figure}[H]\centering\includegraphics[width=0.9\textwidth]{../paper/figures/fig6_rq5_tokens.pdf}\end{figure}
+Up and to the left is better. Preambles add 8.8--10.0 (generic) and 26.9--30.4 (targeted) prompt tokens. Gemini
+targeted: 9 tokens per pp gained. DeepSeek generic: 42 per pp (it writes more after a preamble). Blind repair:
+214--2{,}634 tokens per pp.
+
+\subsection{Engine A retrieval}\label{sec:enginea}
+The retriever, guessing CWEs from the prompt alone, included the right (or a closely related) CWE for 42.9\% of the
+119 held-out tasks and 60.7\% of the study tasks, with about 2 warnings and 60 tokens per prompt. So the targeted
+arm's gain is an \emph{upper bound}: a real retriever would get it right less often.
+
+\subsection{The false-positive audit}
+30 scanner findings drawn at random and frozen. The AI annotator (Claude, not one of the tested models) labelled 22
+false alarms, 5 real problems, 3 unsure. Typical false alarms: Bandit warning on every use of Python's XML parser,
+an SQL warning on an allow-listed column name, \texttt{/tmp} that the task itself required, Semgrep calling
+\texttt{0o700} (owner-only) ``widely permissive''. Real ones: \texttt{shell=True} with unsanitised input,
+\texttt{pickle.loads} on caller data, unescaped user input returned in HTML. \textbf{Still to do:} your own blind
+labels, which give the human--AI kappa.
+
+% =====================================================================
+\section{Weak spots, and how to defend them}
+\begin{description}[style=nextline, leftmargin=1.2em]
+\item[``Tests only check what their authors wrote.''] True; tests can miss weaknesses. That is why we also report the
+  scanners, and why the claim is ``scanners and tests disagree'', not ``tests are perfect''. Unfair tests were
+  removed by fixed rules before the run.
+\item[``You changed the tests (lenient).''] Only the exception-class check, decided from reference solutions before
+  the run, applied only where it still catches the insecure reference, and strict results are always shown.
+\item[``Only 56 tasks / 3 models.''] A student budget; 38 CWE types, 3 developers, 3 reps, paired design, honest
+  intervals. We do not claim results for frontier models.
+\item[``The targeted arm cheats by knowing the CWE.''] Deliberately: it is an oracle that isolates the value of
+  \emph{content}. The retriever evaluation shows how far a real system is from it.
+\item[``Only an AI did the audit.''] Correct for now; the human annotation is the remaining step and the paper says
+  so.
+\item[``Data contamination.''] SecEvalBase prompts derive from 2022 data and may have been seen in training;
+  CodeSecEval itself post-dates gpt-oss-20b's cutoff. Contamination would make models look \emph{better}, not
+  change the scanner-vs-test gap.
+\item[``Random variation.''] 3 reps, paired comparisons, cluster bootstrap, multiple-testing correction, verdict
+  bands fixed in advance.
+\end{description}
+
+% =====================================================================
+\section{Viva FAQ}
+\q{What is the one-sentence contribution?}
+On current models, scanner-guided repair satisfies scanners without improving tested security, while a one-line
+preamble is the cheapest measurable improvement, and its best form depends on the model.
+
+\q{Why not just trust Bandit and Semgrep?}
+Because on the same outputs they agree with the security tests no better than chance ($\kappa=\Kappa$). 593 of 1{,}109
+scanner-clean outputs failed the security test.
+
+\q{Why three models? Why these?}
+Cheap, current, from three different developers (OpenAI, Google, DeepSeek), one small open-weights model. The whole
+run cost \$0.78.
+
+\q{Why temperature 0.7 and 3 reps?}
+Realistic usage has randomness. Three reps let us measure that and still pair every comparison.
+
+\q{What does ``paired'' mean?}
+We compare plain vs targeted on the \emph{same} task and rep, so task difficulty cancels out.
+
+\q{Why a cluster bootstrap instead of a normal confidence interval?}
+Reps of one task are correlated. Resampling tasks keeps the interval honest.
+
+\q{Why McNemar?}
+It is the standard exact test for paired yes/no outcomes; it only uses pairs where the two conditions disagree.
+
+\q{Why Benjamini--Hochberg?}
+We run many comparisons; BH controls the false discovery rate so we do not cherry-pick lucky results.
+
+\q{What does ``pre-registered'' mean here?}
+The thresholds (5 pp, 3 pp, $q<0.05$, 10\% ceiling, 10 pairs) and the verdict rule were written in
+\texttt{docs/PROPOSAL.md} and \texttt{config/study.json} before the main run.
+
+\q{Why did scan-repair change nothing?}
+It fixes what the scanner flags. The scanner flags few insecure outputs, and many of its flags are false alarms. So
+fixing exactly those leaves the real (tested) weaknesses untouched.
+
+\q{Then why does blind repair help a bit?}
+It looks at the whole code with security in mind, not just at scanner lines. The gain is small and not significant,
+at 2.7--4.5 times the tokens.
+
+\q{Why did DeepSeek prefer the generic line?}
+We do not know the internal reason; the paper reports it as an observation. It fits Tony et al.\ (best prompt
+varies by model).
+
+\q{Why was gpt-oss-20b unaffected?}
+It is the smallest model (3.6B active parameters); it may not act on short instructions. Also an observation, not a
+proven cause.
+
+\q{Is the code run safely?}
+Yes. Only inside a bubblewrap jail in WSL: no network, no access to Windows drives, empty environment (no key),
+resource limits, 30\,s timeout. The self-check re-verifies isolation before each run.
+
+\q{What if the run had crashed halfway?}
+Cells use leases in the database; restarting continues where it stopped, without duplicates. Reps are the outer loop,
+so a partial run is still balanced. We tested this by killing a dry run mid-call.
+
+\q{What is truncation and did it matter?}
+A reply cut off at the 16{,}384-token cap. Only 4 DeepSeek repair replies (0.6\% of its calls); counted as failed
+repairs.
+
+\q{What is the MCP server for?}
+It turns the research into a usable tool: a coding assistant can ask for warnings before writing code, scan after,
+and get the measured recommendation per model. It never calls a clean scan ``secure''.
+
+\q{What is new compared with earlier work?}
+(1) generic vs specific warnings on the same tasks; (2) repair judged by executable tests, not the scanner, with
+blind-repair and resample controls; (3) token cost per gained point; (4) current models.
+
+\q{How much did it cost and how long did it take?}
+\$0.78 and 39 minutes for the main run (2{,}520 cells, 2{,}098 calls). Rehearsal: 840 cells, \$0.26.
+
+\q{What would you do next?}
+Human audit (in progress); more models including a frontier one; a better retriever to close the gap to the oracle;
+other languages.
+
+% =====================================================================
+\section{The MCP server}\label{sec:mcp}
+Registered in Claude Code as \texttt{leblanc-v4} (\texttt{python -m leblanc.mcp\_server}). Eight tools:
+\begin{description}[style=nextline, leftmargin=1.2em]
+\item[analyze\_prompt] Warning text for a prompt (retrieve or generic mode) and its token cost.
+\item[scan\_code] Bandit + Semgrep on a code string; findings with tool, rule, CWE, line, scaffolding flag.
+\item[audit\_response] Takes a raw model reply, extracts the code, checks it compiles, scans it.
+\item[scan\_path] Scans a file or folder (only inside the workspace).
+\item[repair\_code] Asks a model to fix code; refuses to spend money unless \texttt{confirm\_spend=true}.
+\item[project\_status] Run counts and completeness from the database.
+\item[results\_summary] The measured results per model.
+\item[recommend] The strategy the results support for a given model.
+\end{description}
+
+% =====================================================================
+\section{Cheat sheet: numbers to know by heart}
+\begin{table}[H]\centering\small
+\begin{tabular}{ll}
+\toprule
+Tasks / CWE types / held-out & 56 / 38 / 119 (175 eligible of 255)\\
+Lenient-valid tasks & \NSpValid\\
+Models & gpt-oss-20b, gemini-3.5-flash-lite, deepseek-v4.1-flash\\
+Cells / calls / time / cost & 2{,}520 / 2{,}098 / 39 min / \$0.78\\
+Scanner flags (plain) & 12.5--13.1\%\\
+Security test fails (plain, lenient / strict) & 54.1--60.7\% / 73--85\%\\
+Works (plain) & 57--65\%\\
+Secure and works (plain) & 27.4--36.1\%\\
+Scanner vs test kappa & \Kappa\\
+Scanner-clean but test fails & 593 of 1{,}109\\
+Gemini targeted & $-11.5$ pp security fails, $q=0.009$\\
+DeepSeek generic & $-11.9$ pp security fails, $q=0.003$\\
+gpt-oss-20b & no effect\\
+scan\_repair & 57/64 fixed for scanners, 0.0 pp secure-and-works change\\
+Preamble cost & +9 to +30 prompt tokens\\
+Retriever accuracy (held-out) & 42.9\%\\
+Audit (AI) & 22 fp / 5 tp / 3 unsure of 30\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{document}

@@ -1,0 +1,24 @@
+\begin{tabular}{llrrrrrrr}
+\toprule
+Model & Strategy & $n$ & Secure+works & Tokens & $\Delta$tok & $\Delta$ & Tok/+1pp & \$/1k \\
+\midrule
+gpt-oss-20b & plain & 168 & 36.1\% & 549 & +0 & +0.0 pp & - & \$0.051 \\
+gpt-oss-20b & generic & 168 & 31.3\% & 642 & +93 & -4.8 pp & - & \$0.063 \\
+gpt-oss-20b & targeted & 168 & 34.1\% & 601 & +52 & -2.0 pp & - & \$0.056 \\
+gpt-oss-20b & plain+scan\_repair & 168 & 36.1\% & 762 & +212 & +0.0 pp & - & \$0.068 \\
+gpt-oss-20b & plain+blind\_repair & 168 & 37.2\% & 1539 & +990 & +1.1 pp & 884 & \$0.130 \\
+gpt-oss-20b & plain+resample & 168 & 36.1\% & 678 & +129 & +0.0 pp & - & \$0.064 \\
+gemini-3.5-flash-lite & plain & 168 & 27.4\% & 365 & +0 & +0.0 pp & - & \$0.500 \\
+gemini-3.5-flash-lite & generic & 168 & 32.6\% & 445 & +80 & +5.2 pp & 15 & \$0.677 \\
+gemini-3.5-flash-lite & targeted & 168 & 38.3\% & 462 & +96 & +10.9 pp & 9 & \$0.673 \\
+gemini-3.5-flash-lite & plain+scan\_repair & 168 & 27.4\% & 500 & +135 & +0.0 pp & - & \$0.628 \\
+gemini-3.5-flash-lite & plain+blind\_repair & 168 & 30.4\% & 1000 & +635 & +3.0 pp & 214 & \$1.178 \\
+gemini-3.5-flash-lite & plain+resample & 168 & 27.4\% & 454 & +89 & +0.0 pp & - & \$0.622 \\
+deepseek-v4.1-flash & plain & 168 & 35.1\% & 922 & +0 & +0.0 pp & - & \$0.224 \\
+deepseek-v4.1-flash & generic & 168 & 44.8\% & 1328 & +406 & +9.7 pp & 42 & \$0.341 \\
+deepseek-v4.1-flash & targeted & 168 & 42.2\% & 1253 & +331 & +7.1 pp & 46 & \$0.314 \\
+deepseek-v4.1-flash & plain+scan\_repair & 168 & 35.1\% & 1053 & +131 & +0.0 pp & - & \$0.249 \\
+deepseek-v4.1-flash & plain+blind\_repair & 168 & 36.3\% & 4140 & +3218 & +1.2 pp & 2634 & \$1.070 \\
+deepseek-v4.1-flash & plain+resample & 168 & 35.1\% & 1148 & +226 & +0.0 pp & - & \$0.279 \\
+\bottomrule
+\end{tabular}

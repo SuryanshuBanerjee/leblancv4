@@ -1,0 +1,403 @@
+% RQ1: With no help, how often does each model write insecure code?
+\begin{table}[t]\centering\small
+\caption{Plain prompt, per model (rate [95\% cluster-bootstrap CI])}
+\begin{tabular}{llllllll}
+\toprule
+model & n & scanner flag & flag on own CWE & security test fails & works & secure and works & ceiling (<10\%) \\
+\midrule
+gpt-oss-20b & 168 & 12.5\% [5.4, 21.4] & 10.1\% & 56.4\% [42.9, 70.2] & 57.1\% [45.3, 69.8] & 36.1\% [23.3, 48.9] & no \\
+gemini-3.5-flash-lite & 168 & 13.1\% [5.4, 22.6] & 11.3\% & 60.7\% [46.7, 74.8] & 56.7\% [44.4, 69.5] & 27.4\% [15.6, 40.0] & no \\
+deepseek-v4.1-flash & 168 & 12.5\% [5.4, 21.4] & 8.9\% & 54.1\% [40.0, 68.1] & 65.0\% [53.3, 77.9] & 35.1\% [22.0, 47.8] & no \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]\centering\small
+\caption{Which weaknesses still get through (plain prompt, all models)}
+\begin{tabular}{lllll}
+\toprule
+CWE & security test fails & rate & scanner flag & rate \\
+\midrule
+CWE-276 & 18/18 & 100.0\% & 1/18 & 5.6\% \\
+CWE-116 & 9/9 & 100.0\% & 0/9 & 0.0\% \\
+CWE-117 & 9/9 & 100.0\% & 0/9 & 0.0\% \\
+CWE-259 & 9/9 & 100.0\% & 0/9 & 0.0\% \\
+CWE-283 & 9/9 & 100.0\% & 0/9 & 0.0\% \\
+CWE-327 & 9/9 & 100.0\% & 0/9 & 0.0\% \\
+CWE-400 & 9/9 & 100.0\% & 3/9 & 33.3\% \\
+CWE-521 & 9/9 & 100.0\% & 0/9 & 0.0\% \\
+CWE-595 & 9/9 & 100.0\% & 0/9 & 0.0\% \\
+CWE-730 & 9/9 & 100.0\% & 0/9 & 0.0\% \\
+CWE-760 & 9/9 & 100.0\% & 0/9 & 0.0\% \\
+CWE-835 & 9/9 & 100.0\% & 0/9 & 0.0\% \\
+CWE-20 & 23/27 & 85.2\% & 9/27 & 33.3\% \\
+CWE-78 & 13/18 & 72.2\% & 0/18 & 0.0\% \\
+CWE-434 & 13/18 & 72.2\% & 1/27 & 3.7\% \\
+CWE-827 & 6/9 & 66.7\% & 0/9 & 0.0\% \\
+CWE-79 & 9/18 & 50.0\% & 0/18 & 0.0\% \\
+CWE-502 & 9/18 & 50.0\% & 9/27 & 33.3\% \\
+CWE-787 & 8/18 & 44.4\% & 0/18 & 0.0\% \\
+CWE-862 & 7/18 & 38.9\% & 0/18 & 0.0\% \\
+CWE-125 & 6/18 & 33.3\% & 0/18 & 0.0\% \\
+CWE-454 & 3/9 & 33.3\% & 0/9 & 0.0\% \\
+CWE-22 & 5/18 & 27.8\% & 9/27 & 33.3\% \\
+CWE-77 & 4/18 & 22.2\% & 9/18 & 50.0\% \\
+CWE-89 & 4/18 & 22.2\% & 9/18 & 50.0\% \\
+CWE-367 & 2/9 & 22.2\% & 0/9 & 0.0\% \\
+CWE-347 & 1/7 & 14.3\% & 1/9 & 11.1\% \\
+CWE-94 & 0/9 & 0.0\% & 0/18 & 0.0\% \\
+CWE-269 & 0/18 & 0.0\% & 0/18 & 0.0\% \\
+CWE-252 & 0/0 & - & 0/9 & 0.0\% \\
+CWE-295 & 0/9 & 0.0\% & 0/9 & 0.0\% \\
+CWE-330 & 0/9 & 0.0\% & 0/9 & 0.0\% \\
+CWE-414 & 0/0 & - & 0/9 & 0.0\% \\
+CWE-425 & 0/0 & - & 0/9 & 0.0\% \\
+CWE-601 & 0/0 & - & 0/9 & 0.0\% \\
+CWE-605 & 0/0 & - & 4/9 & 44.4\% \\
+CWE-611 & 0/0 & - & 9/9 & 100.0\% \\
+CWE-703 & 0/0 & - & 0/9 & 0.0\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+% RQ2: Does a CWE-specific warning reduce insecure code beyond a generic 'write secure code' line?
+\begin{table}[t]\centering\small
+\caption{Paired by task and repetition. Negative effect = less insecure. Verdict bands: yes = reduction >= 5 pp and BH q < 0.05; no = |effect| < 3 pp or CI inside +/-5 pp; ceiling = baseline under 10\%; insufficient = fewer than 10 pairs.}
+\begin{tabular}{llllllllllll}
+\toprule
+model & metric & contrast & pairs & rate A & rate B & effect (B-A) & 95\% CI & discordant B/A & McNemar p & BH q & verdict \\
+\midrule
+gpt-oss-20b & static: scanner finding & generic vs plain & 168 & 12.5\% & 8.3\% & -4.2 pp & [-10.1, +0.6] & 4/11 & 0.118 & 0.213 & unclear \\
+gpt-oss-20b & static: scanner finding & targeted vs plain & 168 & 12.5\% & 10.1\% & -2.4 pp & [-7.1, +0.6] & 1/5 & 0.219 & 0.358 & no \\
+gpt-oss-20b & static: scanner finding & targeted vs generic & 168 & 8.3\% & 10.1\% & +1.8 pp & [-4.2, +8.3] & 9/6 & 0.607 & 0.729 & no \\
+gpt-oss-20b & dynamic: security test fails & generic vs plain & 129 & 55.8\% & 54.3\% & -1.6 pp & [-10.1, +7.0] & 12/14 & 0.845 & 0.895 & no \\
+gpt-oss-20b & dynamic: security test fails & targeted vs plain & 133 & 56.4\% & 57.9\% & +1.5 pp & [-5.2, +8.3] & 9/7 & 0.804 & 0.895 & no \\
+gpt-oss-20b & dynamic: security test fails & targeted vs generic & 129 & 54.3\% & 57.4\% & +3.1 pp & [-6.2, +12.4] & 16/12 & 0.572 & 0.729 & unclear \\
+gemini-3.5-flash-lite & static: scanner finding & generic vs plain & 168 & 13.1\% & 7.1\% & -6.0 pp & [-13.1, -0.6] & 0/10 & 0.002 & 0.009 & yes \\
+gemini-3.5-flash-lite & static: scanner finding & targeted vs plain & 166 & 13.3\% & 9.6\% & -3.6 pp & [-9.8, +0.6] & 1/7 & 0.070 & 0.193 & unclear \\
+gemini-3.5-flash-lite & static: scanner finding & targeted vs generic & 166 & 7.2\% & 9.6\% & +2.4 pp & [-3.6, +9.0] & 7/3 & 0.344 & 0.516 & no \\
+gemini-3.5-flash-lite & dynamic: security test fails & generic vs plain & 135 & 60.7\% & 57.8\% & -3.0 pp & [-11.9, +5.2] & 7/11 & 0.481 & 0.666 & no \\
+gemini-3.5-flash-lite & dynamic: security test fails & targeted vs plain & 131 & 62.6\% & 51.1\% & -11.5 pp & [-22.3, -1.5] & 3/18 & 0.001 & 0.009 & yes \\
+gemini-3.5-flash-lite & dynamic: security test fails & targeted vs generic & 131 & 59.5\% & 51.1\% & -8.4 pp & [-15.4, -2.3] & 0/11 & <0.001 & 0.009 & yes \\
+deepseek-v4.1-flash & static: scanner finding & generic vs plain & 168 & 12.5\% & 7.1\% & -5.4 pp & [-12.5, +0.0] & 0/9 & 0.004 & 0.014 & yes \\
+deepseek-v4.1-flash & static: scanner finding & targeted vs plain & 168 & 12.5\% & 7.7\% & -4.8 pp & [-13.1, +3.0] & 5/13 & 0.096 & 0.193 & unclear \\
+deepseek-v4.1-flash & static: scanner finding & targeted vs generic & 168 & 7.1\% & 7.7\% & +0.6 pp & [-5.4, +6.0] & 5/4 & 1.000 & 1.000 & no \\
+deepseek-v4.1-flash & dynamic: security test fails & generic vs plain & 134 & 53.7\% & 41.8\% & -11.9 pp & [-20.2, -5.2] & 1/17 & <0.001 & 0.003 & yes \\
+deepseek-v4.1-flash & dynamic: security test fails & targeted vs plain & 135 & 54.1\% & 48.1\% & -5.9 pp & [-14.1, +0.7] & 4/12 & 0.077 & 0.193 & unclear \\
+deepseek-v4.1-flash & dynamic: security test fails & targeted vs generic & 134 & 41.8\% & 47.8\% & +6.0 pp & [+0.8, +11.2] & 13/5 & 0.096 & 0.193 & unclear \\
+\bottomrule
+\end{tabular}
+\end{table}
+% RQ3: Does a security preamble change whether the code works?
+\begin{table}[t]\centering\small
+\caption{Paired by task and repetition. Negative effect = fewer outputs work (verdict 'yes' = a cost of at least 5 pp).}
+\begin{tabular}{llllllllllll}
+\toprule
+model & metric & contrast & pairs & rate A & rate B & effect (B-A) & 95\% CI & discordant B/A & McNemar p & BH q & verdict \\
+\midrule
+gpt-oss-20b & works: functional test passes & generic vs plain & 157 & 58.0\% & 52.2\% & -5.7 pp & [-11.6, -0.6] & 3/12 & 0.035 & 0.105 & unclear \\
+gpt-oss-20b & works: functional test passes & targeted vs plain & 159 & 57.9\% & 57.9\% & +0.0 pp & [-8.0, +7.6] & 11/11 & 1.000 & 1.000 & no \\
+gpt-oss-20b & secure and works & generic vs plain & 129 & 36.4\% & 31.8\% & -4.7 pp & [-11.6, +1.6] & 5/11 & 0.210 & 0.315 & unclear \\
+gpt-oss-20b & secure and works & targeted vs plain & 132 & 36.4\% & 34.1\% & -2.3 pp & [-8.1, +3.7] & 6/9 & 0.607 & 0.729 & no \\
+gemini-3.5-flash-lite & works: functional test passes & generic vs plain & 162 & 57.4\% & 61.7\% & +4.3 pp & [-0.6, +9.9] & 10/3 & 0.092 & 0.221 & unclear \\
+gemini-3.5-flash-lite & works: functional test passes & targeted vs plain & 162 & 57.4\% & 59.9\% & +2.5 pp & [-6.9, +11.7] & 14/10 & 0.541 & 0.722 & no \\
+gemini-3.5-flash-lite & secure and works & generic vs plain & 135 & 27.4\% & 32.6\% & +5.2 pp & [-3.0, +13.3] & 12/5 & 0.143 & 0.246 & unclear \\
+gemini-3.5-flash-lite & secure and works & targeted vs plain & 133 & 27.8\% & 38.3\% & +10.5 pp & [+0.7, +21.4] & 18/4 & 0.004 & 0.026 & unclear \\
+deepseek-v4.1-flash & works: functional test passes & generic vs plain & 162 & 65.4\% & 65.4\% & +0.0 pp & [-4.3, +4.3] & 5/5 & 1.000 & 1.000 & no \\
+deepseek-v4.1-flash & works: functional test passes & targeted vs plain & 161 & 65.8\% & 70.8\% & +5.0 pp & [-1.9, +12.4] & 14/6 & 0.115 & 0.231 & unclear \\
+deepseek-v4.1-flash & secure and works & generic vs plain & 133 & 35.3\% & 45.1\% & +9.8 pp & [+3.8, +17.4] & 14/1 & <0.001 & 0.012 & unclear \\
+deepseek-v4.1-flash & secure and works & targeted vs plain & 134 & 35.1\% & 42.5\% & +7.5 pp & [+0.0, +16.3] & 14/4 & 0.031 & 0.105 & unclear \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]\centering\small
+\caption{Sensitivity: tasks whose functional test fails every output of every model and arm (uninformative for this contrast; listed, and the contrast is unchanged by them because pairs are within task)}
+\begin{tabular}{lll}
+\toprule
+task & CWE & outputs tested \\
+\midrule
+T03 & CWE-22 & 27 \\
+T19 & CWE-276 & 27 \\
+T41 & CWE-400 & 27 \\
+T43 & CWE-425 & 11 \\
+T44 & CWE-434 & 27 \\
+T45 & CWE-454 & 27 \\
+T47 & CWE-521 & 23 \\
+T49 & CWE-601 & 9 \\
+T50 & CWE-605 & 27 \\
+T51 & CWE-611 & 27 \\
+T53 & CWE-730 & 27 \\
+T54 & CWE-760 & 27 \\
+\bottomrule
+\end{tabular}
+\end{table}
+% RQ4: Given the plain output, which fix works best: scanner-guided repair, a blind 'fix vulnerabilities' pass, or simply sampling again?
+\begin{table}[t]\centering\small
+\caption{Outcome per strategy (applied to the plain output; tokens include the original generation)}
+\begin{tabular}{llllllll}
+\toprule
+model & strategy & n & scanner clean & security test fails & works & secure and works [CI] & mean tokens \\
+\midrule
+gpt-oss-20b & none & 168 & 87.5\% & 56.4\% & 57.1\% & 36.1\% [23.3, 48.9] & 549 \\
+gpt-oss-20b & scan\_repair & 168 & 97.6\% & 54.9\% & 55.6\% & 36.1\% [23.3, 48.9] & 762 \\
+gpt-oss-20b & blind\_repair & 168 & 92.9\% & 49.6\% & 58.9\% & 37.2\% [24.4, 50.0] & 1539 \\
+gpt-oss-20b & resample & 168 & 89.3\% & 56.4\% & 57.1\% & 36.1\% [23.3, 48.9] & 678 \\
+gemini-3.5-flash-lite & none & 168 & 86.9\% & 60.7\% & 56.7\% & 27.4\% [15.6, 40.0] & 365 \\
+gemini-3.5-flash-lite & scan\_repair & 168 & 98.2\% & 60.7\% & 58.5\% & 27.4\% [15.6, 40.0] & 500 \\
+gemini-3.5-flash-lite & blind\_repair & 168 & 93.4\% & 58.2\% & 62.8\% & 30.4\% [17.8, 43.0] & 1000 \\
+gemini-3.5-flash-lite & resample & 168 & 87.5\% & 60.7\% & 56.7\% & 27.4\% [15.6, 40.0] & 454 \\
+deepseek-v4.1-flash & none & 168 & 87.5\% & 54.1\% & 65.0\% & 35.1\% [22.0, 47.8] & 922 \\
+deepseek-v4.1-flash & scan\_repair & 168 & 100.0\% & 54.1\% & 64.4\% & 35.1\% [22.0, 47.8] & 1053 \\
+deepseek-v4.1-flash & blind\_repair & 168 & 93.9\% & 51.1\% & 65.5\% & 36.3\% [23.0, 48.9] & 4140 \\
+deepseek-v4.1-flash & resample & 168 & 87.5\% & 54.1\% & 65.0\% & 35.1\% [22.0, 47.8] & 1148 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]\centering\small
+\caption{Paired comparisons (positive effect = B better for these metrics)}
+\begin{tabular}{lllllllllll}
+\toprule
+model & metric & contrast & pairs & rate A & rate B & effect (B-A) & 95\% CI & discordant B/A & McNemar p & BH q \\
+\midrule
+gpt-oss-20b & secure and works & scan\_repair vs none & 133 & 36.1\% & 36.1\% & +0.0 pp & [+0.0, +0.0] & 0/0 & 1.000 & 1.000 \\
+gpt-oss-20b & static: no finding & scan\_repair vs none & 168 & 87.5\% & 97.6\% & +10.1 pp & [+4.2, +17.9] & 17/0 & <0.001 & <0.001 \\
+gpt-oss-20b & secure and works & blind\_repair vs none & 129 & 37.2\% & 37.2\% & +0.0 pp & [-5.4, +5.3] & 4/4 & 1.000 & 1.000 \\
+gpt-oss-20b & static: no finding & blind\_repair vs none & 168 & 87.5\% & 92.9\% & +5.4 pp & [+0.0, +11.3] & 10/1 & 0.012 & 0.029 \\
+gpt-oss-20b & secure and works & scan\_repair vs blind\_repair & 129 & 37.2\% & 37.2\% & +0.0 pp & [-5.3, +5.4] & 4/4 & 1.000 & 1.000 \\
+gpt-oss-20b & static: no finding & scan\_repair vs blind\_repair & 168 & 92.9\% & 97.6\% & +4.8 pp & [+1.2, +9.5] & 8/0 & 0.008 & 0.021 \\
+gpt-oss-20b & secure and works & scan\_repair vs resample & 133 & 36.1\% & 36.1\% & +0.0 pp & [+0.0, +0.0] & 0/0 & 1.000 & 1.000 \\
+gpt-oss-20b & static: no finding & scan\_repair vs resample & 168 & 89.3\% & 97.6\% & +8.3 pp & [+2.4, +16.1] & 14/0 & <0.001 & <0.001 \\
+gpt-oss-20b & secure and works & resample vs none & 133 & 36.1\% & 36.1\% & +0.0 pp & [+0.0, +0.0] & 0/0 & 1.000 & 1.000 \\
+gpt-oss-20b & static: no finding & resample vs none & 168 & 87.5\% & 89.3\% & +1.8 pp & [+0.0, +4.2] & 3/0 & 0.250 & 0.500 \\
+gemini-3.5-flash-lite & secure and works & scan\_repair vs none & 135 & 27.4\% & 27.4\% & +0.0 pp & [+0.0, +0.0] & 0/0 & 1.000 & 1.000 \\
+gemini-3.5-flash-lite & static: no finding & scan\_repair vs none & 168 & 86.9\% & 98.2\% & +11.3 pp & [+4.2, +19.7] & 19/0 & <0.001 & <0.001 \\
+gemini-3.5-flash-lite & secure and works & blind\_repair vs none & 135 & 27.4\% & 30.4\% & +3.0 pp & [+0.7, +5.9] & 4/0 & 0.125 & 0.268 \\
+gemini-3.5-flash-lite & static: no finding & blind\_repair vs none & 167 & 86.8\% & 93.4\% & +6.6 pp & [+1.2, +13.3] & 11/0 & <0.001 & 0.004 \\
+gemini-3.5-flash-lite & secure and works & scan\_repair vs blind\_repair & 135 & 30.4\% & 27.4\% & -3.0 pp & [-5.9, -0.7] & 0/4 & 0.125 & 0.268 \\
+gemini-3.5-flash-lite & static: no finding & scan\_repair vs blind\_repair & 167 & 93.4\% & 98.2\% & +4.8 pp & [+0.6, +10.7] & 8/0 & 0.008 & 0.021 \\
+gemini-3.5-flash-lite & secure and works & scan\_repair vs resample & 135 & 27.4\% & 27.4\% & +0.0 pp & [+0.0, +0.0] & 0/0 & 1.000 & 1.000 \\
+gemini-3.5-flash-lite & static: no finding & scan\_repair vs resample & 168 & 87.5\% & 98.2\% & +10.7 pp & [+3.6, +19.6] & 19/1 & <0.001 & <0.001 \\
+gemini-3.5-flash-lite & secure and works & resample vs none & 135 & 27.4\% & 27.4\% & +0.0 pp & [+0.0, +0.0] & 0/0 & 1.000 & 1.000 \\
+gemini-3.5-flash-lite & static: no finding & resample vs none & 168 & 86.9\% & 87.5\% & +0.6 pp & [+0.0, +1.8] & 1/0 & 1.000 & 1.000 \\
+deepseek-v4.1-flash & secure and works & scan\_repair vs none & 134 & 35.1\% & 35.1\% & +0.0 pp & [+0.0, +0.0] & 0/0 & 1.000 & 1.000 \\
+deepseek-v4.1-flash & static: no finding & scan\_repair vs none & 168 & 87.5\% & 100.0\% & +12.5 pp & [+5.4, +21.4] & 21/0 & <0.001 & <0.001 \\
+deepseek-v4.1-flash & secure and works & blind\_repair vs none & 134 & 35.1\% & 36.6\% & +1.5 pp & [+0.0, +3.7] & 2/0 & 0.500 & 0.882 \\
+deepseek-v4.1-flash & static: no finding & blind\_repair vs none & 164 & 87.8\% & 93.9\% & +6.1 pp & [+0.6, +12.8] & 11/1 & 0.006 & 0.021 \\
+deepseek-v4.1-flash & secure and works & scan\_repair vs blind\_repair & 134 & 36.6\% & 35.1\% & -1.5 pp & [-3.7, +0.0] & 0/2 & 0.500 & 0.882 \\
+deepseek-v4.1-flash & static: no finding & scan\_repair vs blind\_repair & 164 & 93.9\% & 100.0\% & +6.1 pp & [+1.8, +11.7] & 10/0 & 0.002 & 0.007 \\
+deepseek-v4.1-flash & secure and works & scan\_repair vs resample & 134 & 35.1\% & 35.1\% & +0.0 pp & [+0.0, +0.0] & 1/1 & 1.000 & 1.000 \\
+deepseek-v4.1-flash & static: no finding & scan\_repair vs resample & 168 & 87.5\% & 100.0\% & +12.5 pp & [+5.4, +21.4] & 21/0 & <0.001 & <0.001 \\
+deepseek-v4.1-flash & secure and works & resample vs none & 134 & 35.1\% & 35.1\% & +0.0 pp & [+0.0, +0.0] & 1/1 & 1.000 & 1.000 \\
+deepseek-v4.1-flash & static: no finding & resample vs none & 168 & 87.5\% & 87.5\% & +0.0 pp & [+0.0, +0.0] & 0/0 & 1.000 & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]\centering\small
+\caption{Repairs that broke working code (functional test passed before, fails after)}
+\begin{tabular}{llllllll}
+\toprule
+model & strategy & worked before & broken after & rate & of those scanner-flagged: worked & broken & rate \\
+\midrule
+gpt-oss-20b & scan\_repair & 92 & 3 & 3.3\% & 12 & 3 & 25.0\% \\
+gpt-oss-20b & blind\_repair & 92 & 4 & 4.3\% & 12 & 1 & 8.3\% \\
+gemini-3.5-flash-lite & scan\_repair & 93 & 0 & 0.0\% & 12 & 0 & 0.0\% \\
+gemini-3.5-flash-lite & blind\_repair & 93 & 1 & 1.1\% & 12 & 0 & 0.0\% \\
+deepseek-v4.1-flash & scan\_repair & 106 & 2 & 1.9\% & 12 & 2 & 16.7\% \\
+deepseek-v4.1-flash & blind\_repair & 106 & 4 & 3.8\% & 12 & 1 & 8.3\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]\centering\small
+\caption{Scanner-guided repair: outcome and mean rounds}
+\begin{tabular}{llll}
+\toprule
+model & outcome & cells & mean rounds \\
+\midrule
+deepseek-v4.1-flash & fixed & 21 & 1.00 \\
+deepseek-v4.1-flash & not\_needed & 147 & 0.00 \\
+gemini-3.5-flash-lite & fixed & 19 & 1.11 \\
+gemini-3.5-flash-lite & not\_converged & 3 & 3.00 \\
+gemini-3.5-flash-lite & not\_needed & 146 & 0.00 \\
+gpt-oss-20b & fixed & 17 & 1.12 \\
+gpt-oss-20b & not\_converged & 4 & 3.00 \\
+gpt-oss-20b & not\_needed & 147 & 0.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+% RQ5: What does each strategy cost in tokens per additional secure-and-working output?
+\begin{table}[t]\centering\small
+\caption{Cost-effectiveness per strategy (secure and works rate vs mean tokens per task attempt)}
+\begin{tabular}{lllllllll}
+\toprule
+model & strategy & n & secure and works & mean tokens & extra tokens vs plain & change vs plain & extra tokens per +1 pp & mean cost per 1,000 attempts \\
+\midrule
+gpt-oss-20b & plain & 168 & 36.1\% & 549 & +0 & +0.0 pp & - & $0.051 \\
+gpt-oss-20b & generic & 168 & 31.3\% & 642 & +93 & -4.8 pp & - & $0.063 \\
+gpt-oss-20b & targeted & 168 & 34.1\% & 601 & +52 & -2.0 pp & - & $0.056 \\
+gpt-oss-20b & plain+scan\_repair & 168 & 36.1\% & 762 & +212 & +0.0 pp & - & $0.068 \\
+gpt-oss-20b & plain+blind\_repair & 168 & 37.2\% & 1539 & +990 & +1.1 pp & 884 & $0.130 \\
+gpt-oss-20b & plain+resample & 168 & 36.1\% & 678 & +129 & +0.0 pp & - & $0.064 \\
+gemini-3.5-flash-lite & plain & 168 & 27.4\% & 365 & +0 & +0.0 pp & - & $0.500 \\
+gemini-3.5-flash-lite & generic & 168 & 32.6\% & 445 & +80 & +5.2 pp & 15 & $0.677 \\
+gemini-3.5-flash-lite & targeted & 168 & 38.3\% & 462 & +96 & +10.9 pp & 9 & $0.673 \\
+gemini-3.5-flash-lite & plain+scan\_repair & 168 & 27.4\% & 500 & +135 & +0.0 pp & - & $0.628 \\
+gemini-3.5-flash-lite & plain+blind\_repair & 168 & 30.4\% & 1000 & +635 & +3.0 pp & 214 & $1.178 \\
+gemini-3.5-flash-lite & plain+resample & 168 & 27.4\% & 454 & +89 & +0.0 pp & - & $0.622 \\
+deepseek-v4.1-flash & plain & 168 & 35.1\% & 922 & +0 & +0.0 pp & - & $0.224 \\
+deepseek-v4.1-flash & generic & 168 & 44.8\% & 1328 & +406 & +9.7 pp & 42 & $0.341 \\
+deepseek-v4.1-flash & targeted & 168 & 42.2\% & 1253 & +331 & +7.1 pp & 46 & $0.314 \\
+deepseek-v4.1-flash & plain+scan\_repair & 168 & 35.1\% & 1053 & +131 & +0.0 pp & - & $0.249 \\
+deepseek-v4.1-flash & plain+blind\_repair & 168 & 36.3\% & 4140 & +3218 & +1.2 pp & 2634 & $1.070 \\
+deepseek-v4.1-flash & plain+resample & 168 & 35.1\% & 1148 & +226 & +0.0 pp & - & $0.279 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]\centering\small
+\caption{Prompt tokens added by each preamble (measured from provider usage, paired with plain)}
+\begin{tabular}{llll}
+\toprule
+model & arm & pairs & mean added prompt tokens \\
+\midrule
+gpt-oss-20b & generic & 168 & 8.8 \\
+gemini-3.5-flash-lite & generic & 168 & 10.0 \\
+deepseek-v4.1-flash & generic & 168 & 9.7 \\
+gpt-oss-20b & targeted & 168 & 26.9 \\
+gemini-3.5-flash-lite & targeted & 168 & 30.4 \\
+deepseek-v4.1-flash & targeted & 168 & 28.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+% VALIDITY: Can the instruments be trusted? (reported with every RQ)
+\begin{table}[t]\centering\small
+\caption{Lenient (primary) vs published strict test scoring. Lenient accepts any exception where a test requires the input to be rejected; lenient security results use only the 45 tasks where the lenient security test still fails the insecure reference.}
+\begin{tabular}{llllllll}
+\toprule
+model & arm & works & works (strict) & security test fails & security fails (strict) & secure and works & secure and works (strict) \\
+\midrule
+gpt-oss-20b & plain & 57.1\% (n=161) & 57.1\% (n=161) & 56.4\% (n=133) & 83.1\% (n=160) & 36.1\% (n=133) & 16.2\% (n=160) \\
+gpt-oss-20b & generic & 50.9\% (n=161) & 50.9\% (n=161) & 54.2\% (n=131) & 84.5\% (n=161) & 31.3\% (n=131) & 13.0\% (n=161) \\
+gpt-oss-20b & targeted & 56.8\% (n=162) & 56.8\% (n=162) & 57.9\% (n=133) & 82.1\% (n=162) & 34.1\% (n=132) & 15.4\% (n=162) \\
+gemini-3.5-flash-lite & plain & 56.7\% (n=164) & 56.7\% (n=164) & 60.7\% (n=135) & 85.4\% (n=164) & 27.4\% (n=135) & 11.0\% (n=164) \\
+gemini-3.5-flash-lite & generic & 61.7\% (n=162) & 61.7\% (n=162) & 57.8\% (n=135) & 84.0\% (n=162) & 32.6\% (n=135) & 13.0\% (n=162) \\
+gemini-3.5-flash-lite & targeted & 59.5\% (n=163) & 59.5\% (n=163) & 51.1\% (n=131) & 75.2\% (n=161) & 38.3\% (n=133) & 17.8\% (n=163) \\
+deepseek-v4.1-flash & plain & 65.0\% (n=163) & 65.0\% (n=163) & 54.1\% (n=135) & 73.0\% (n=163) & 35.1\% (n=134) & 21.5\% (n=163) \\
+deepseek-v4.1-flash & generic & 64.6\% (n=164) & 64.6\% (n=164) & 41.8\% (n=134) & 68.3\% (n=164) & 44.8\% (n=134) & 26.2\% (n=164) \\
+deepseek-v4.1-flash & targeted & 69.1\% (n=165) & 69.1\% (n=165) & 48.1\% (n=135) & 66.5\% (n=164) & 42.2\% (n=135) & 28.0\% (n=164) \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]\centering\small
+\caption{Scanner verdict vs security-test verdict on the same outputs (Cohen's kappa 0.00, n=1202)}
+\begin{tabular}{lll}
+\toprule
+ & security test passes & security test fails \\
+\midrule
+scanner clean & 516 & 593 \\
+scanner flags & 42 & 51 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]\centering\small
+\caption{False-positive audit of scanner findings}
+\begin{tabular}{lllll}
+\toprule
+annotator & labelled & true positive & false positive & unsure \\
+\midrule
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]\centering\small
+\caption{Which analyser flagged the generation outputs}
+\begin{tabular}{ll}
+\toprule
+analyser & outputs \\
+\midrule
+bandit only & 115 \\
+both & 17 \\
+neither & 1362 \\
+semgrep only & 16 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]\centering\small
+\caption{Most frequent rules (generation outputs)}
+\begin{tabular}{llll}
+\toprule
+tool & rule & findings & on scaffolding \\
+\midrule
+bandit & B314 & 31 & 0 \\
+bandit & B108 & 27 & 0 \\
+bandit & B608 & 26 & 0 \\
+bandit & B301 & 19 & 0 \\
+bandit+semgrep & B602 & 16 & 0 \\
+bandit & B317 & 14 & 0 \\
+semgrep & directly-returned-format-string & 10 & 0 \\
+semgrep & insecure-file-permissions & 6 & 0 \\
+bandit & B104 & 5 & 0 \\
+bandit & B202 & 2 & 0 \\
+bandit & B318 & 1 & 0 \\
+semgrep & flask-url-for-external-true & 1 & 0 \\
+semgrep & open-redirect & 1 & 0 \\
+semgrep & unverified-jwt-decode & 1 & 0 \\
+semgrep & use-defused-xml-parse & 1 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]\centering\small
+\caption{Code extraction by model and arm}
+\begin{tabular}{llll}
+\toprule
+model & arm & extraction & outputs \\
+\midrule
+deepseek-v4.1-flash & generic & ok & 168 \\
+deepseek-v4.1-flash & plain & ok & 168 \\
+deepseek-v4.1-flash & targeted & ok & 168 \\
+gemini-3.5-flash-lite & generic & ok & 168 \\
+gemini-3.5-flash-lite & plain & ok & 168 \\
+gemini-3.5-flash-lite & targeted & ok & 166 \\
+gemini-3.5-flash-lite & targeted & syntax\_error & 2 \\
+gpt-oss-20b & generic & ok & 168 \\
+gpt-oss-20b & plain & ok & 168 \\
+gpt-oss-20b & targeted & ok & 168 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]\centering\small
+\caption{Functional test outcome classes}
+\begin{tabular}{ll}
+\toprule
+result & outputs \\
+\midrule
+fail & 865 \\
+harness\_error & 28 \\
+needs\_config & 53 \\
+no\_entry & 46 \\
+pass & 1476 \\
+timeout & 45 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]\centering\small
+\caption{Security test outcome classes}
+\begin{tabular}{ll}
+\toprule
+result & outputs \\
+\midrule
+fail & 1852 \\
+harness\_error & 28 \\
+needs\_config & 56 \\
+no\_entry & 46 \\
+pass & 531 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]\centering\small
+\caption{Model calls: attempts, successes, truncations (gate: truncation under 2\%)}
+\begin{tabular}{lllll}
+\toprule
+model & attempts & ok & truncated & truncation rate \\
+\midrule
+deepseek-v4.1-flash & 709 & 693 & 4 & 0.6\% \\
+gemini-3.5-flash-lite & 718 & 702 & 0 & 0.0\% \\
+gpt-oss-20b & 719 & 703 & 0 & 0.0\% \\
+\bottomrule
+\end{tabular}
+\end{table}

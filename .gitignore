@@ -1,0 +1,51 @@
+# Secrets (API keys live in .env, in this folder or its parent)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+credentials.json
+secrets.json
+
+# Claude Code and other AI-assistant local settings
+.claude/
+CLAUDE.local.md
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+.venv/
+venv/
+
+# Sandbox scratch: model-written code is copied here for scanning. Never commit it.
+run/scan_tmp/
+
+# SQLite temporary files (the .db files themselves are committed)
+*.db-shm
+*.db-wal
+*.db-journal
+
+# Logs
+*.log
+
+# LaTeX build files (the built PDFs are committed)
+*.aux
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

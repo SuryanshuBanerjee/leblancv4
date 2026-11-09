@@ -1,0 +1,46 @@
+{
+  "provider": "openrouter",
+  "base_url": "https://openrouter.ai/api/v1/chat/completions",
+  "key_env": "OPENROUTER_API_KEY",
+  "pinning_note": "Each model is restricted to named hosts with fallbacks to other hosts disabled, chosen 2026-11-06 from OpenRouter's endpoint list. gpt-oss-20b: DeepInfra bf16, then DekaLLM bf16 when DeepInfra is rate-limited (same full-precision weights; DeepInfra alone rejected 27% of calls with HTTP 429 in the rehearsal). gemini-3.5-flash-lite: Google AI Studio (first party; supports temperature). deepseek-v4.1-flash: DeepInfra fp8 (DeepSeek's own endpoint is excluded by the account's no-training privacy setting). The serving host of every call is stored in calls.provider.",
+  "models": [
+    {
+      "id": "openai/gpt-oss-20b",
+      "label": "gpt-oss-20b",
+      "developer": "OpenAI (open weights)",
+      "tier": "small open-weights MoE (3.6B active); knowledge cutoff June 2024",
+      "provider_order": [
+        "deepinfra",
+        "dekallm"
+      ],
+      "quantizations": [
+        "bf16"
+      ],
+      "reasoning": true
+    },
+    {
+      "id": "google/gemini-3.5-flash-lite",
+      "label": "gemini-3.5-flash-lite",
+      "developer": "Google",
+      "tier": "small closed",
+      "provider_order": [
+        "google-ai-studio"
+      ],
+      "quantizations": null,
+      "reasoning": true
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash-1017",
+      "label": "deepseek-v4.1-flash",
+      "developer": "DeepSeek",
+      "tier": "large sparse MoE (552B total), cost-efficient tier",
+      "provider_order": [
+        "deepinfra"
+      ],
+      "quantizations": [
+        "fp8"
+      ],
+      "reasoning": true
+    }
+  ]
+}

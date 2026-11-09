@@ -1,0 +1,4 @@
+id,ts,level,msg
+1,1793913169.1488094,info,"planned 2520 cells (56 tasks x 3 models, 3 reps)"
+2,1793913172.289781,info,runner started (pid 22284); spend so far $0.0000 of $4.5
+3,1793915628.519721,info,runner exited: complete; 0 cells remaining; spend $0.7849

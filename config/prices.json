@@ -1,0 +1,18 @@
+{
+  "as_of": "2026-11-06",
+  "source": "OpenRouter endpoint list for the pinned host of each model (config/models.json), fetched 2026-11-06. Spend is taken from OpenRouter's per-call usage.cost; these list prices are used only for projections and for calls that report no cost.",
+  "usd_per_million_tokens": {
+    "openai/gpt-oss-20b": {
+      "input": 0.03,
+      "output": 0.14
+    },
+    "google/gemini-3.5-flash-lite": {
+      "input": 0.3,
+      "output": 2.5
+    },
+    "deepseek/deepseek-v4.1-flash-1017": {
+      "input": 0.0784,
+      "output": 0.2352
+    }
+  }
+}

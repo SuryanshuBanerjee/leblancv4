@@ -1,0 +1,34 @@
+% LeBlanc v4 pipeline diagram (TikZ). \input by the paper, the report and the guide.
+% Needs \usepackage{tikz} and \usetikzlibrary{arrows.meta,positioning,fit}.
+\begin{tikzpicture}[
+  font=\sffamily\scriptsize, node distance=4mm and 5mm,
+  box/.style={draw, thick, align=center, minimum height=9mm, inner sep=3pt, text width=#1},
+  box/.default=19mm,
+  data/.style={box=#1, fill=black!5},
+  judge/.style={box=#1, fill=blue!6},
+  arr/.style={-{Stealth[length=2mm]}, thick},
+  lbl/.style={font=\sffamily\tiny, midway, fill=white, inner sep=1pt}]
+  % row 1: generation
+  \node[data] (task) {\textbf{Task}\\CodeSecEval\\(56 tasks, 38 CWEs)};
+  \node[box=21mm, right=of task] (arm) {\textbf{Prompt arm}\\plain / generic /\\targeted (CWE line)};
+  \node[box=21mm, right=of arm] (llm) {\textbf{Model call}\\OpenRouter\\3 models, 3 reps};
+  \node[box=23mm, right=of llm] (ext) {\textbf{Extract}\\first python block,\\compile check};
+  % row 2: judges
+  \node[judge=26mm, below=11mm of ext, xshift=-17mm] (sast) {\textbf{Static judge}\\Bandit $\cup$ Semgrep\\$\Rightarrow$ flagged?};
+  \node[judge=26mm, right=of sast] (box) {\textbf{Sandbox (WSL jail)}\\Test-FP $\Rightarrow$ works?\\Test-SP $\Rightarrow$ secure?};
+  % repair
+  \node[box=28mm, below=11mm of arm, xshift=0mm] (rep) {\textbf{Fix strategies}\\on the plain output:\\scan-repair ($\le$3 rounds),\\blind repair, resample};
+  % storage and outputs
+  \node[data=24mm, below=9mm of sast, xshift=14mm] (db) {\textbf{SQLite} \texttt{run/leblanc.db}\\cells, calls, findings,\\repair rounds, audit};
+  \node[box=20mm, left=7mm of db] (out) {\textbf{Analysis}\\stats, figures,\\paper, web UI, MCP};
+  \draw[arr] (task) -- (arm);
+  \draw[arr] (arm) -- (llm);
+  \draw[arr] (llm) -- (ext);
+  \draw[arr] (ext.south) -- ++(0,-4mm) -| (sast.north);
+  \draw[arr] (ext.south) -- ++(0,-4mm) -| (box.north);
+  \draw[arr, dashed] (sast.west) -- node[lbl, above=1pt] {findings} (rep.east |- sast.west);
+  \draw[arr, dashed] (rep.north) -- node[lbl, right=1pt] {new call} ++(0,6mm) -| ([xshift=-3mm]llm.south);
+  \draw[arr] (sast.south) -- ++(0,-3mm) -| ([xshift=-4mm]db.north);
+  \draw[arr] (box.south) -- ++(0,-3mm) -| ([xshift=4mm]db.north);
+  \draw[arr] (db.west) -- (out.east);
+\end{tikzpicture}

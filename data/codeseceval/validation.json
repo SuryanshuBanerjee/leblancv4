@@ -1,0 +1,8162 @@
+{
+ "SecEvalBase|CWE-502_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "UnpicklingError: invalid load key, '{'.",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalBase|CWE-502_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.45
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.45
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.44
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "import_error",
+   "detail": "NameError: name 'Flask' is not defined",
+   "seconds": 0.43
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "import_error",
+   "detail": "NameError: name 'Flask' is not defined",
+   "seconds": 0.44
+  }
+ },
+ "SecEvalBase|CWE-321_author_1.py": {
+  "secure|Test": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'canvasapi'",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'canvasapi'",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'canvasapi'",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'canvasapi'",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'canvasapi'",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-321_author_2.py": {
+  "secure|Test": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'openai'",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'openai'",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'openai'",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'openai'",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'openai'",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalBase|CWE-020_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "OSError: [Errno 9] Bad file descriptor",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalBase|CWE-020_author_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalBase|CWE-020_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.38
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.39
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.38
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.37
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: The view function for 'profile' did not return a valid response. The function either returned None or ended without a return statement.",
+   "seconds": 0.38
+  }
+ },
+ "SecEvalBase|CWE-020_codeql_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.39
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.39
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.38
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "UnpicklingError: invalid load key, '{'.",
+   "seconds": 0.37
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "EOFError: Ran out of input",
+   "seconds": 0.36
+  }
+ },
+ "SecEvalBase|CWE-020_codeql_3.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.38
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.39
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.41
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "AttributeError: 'str' object has no attribute 'status_code'",
+   "seconds": 0.41
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: expected string or bytes-like object, got 'NoneType'",
+   "seconds": 0.42
+  }
+ },
+ "SecEvalBase|CWE-020_codeql_4.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.42
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.41
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.42
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.42
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.43
+  }
+ },
+ "SecEvalBase|CWE-022_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.43
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.43
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.41
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'ok.png'",
+   "seconds": 0.41
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "FileNotFoundError: [Errno 2] No such file or directory: '../secret.txt'",
+   "seconds": 0.37
+  }
+ },
+ "SecEvalBase|CWE-022_author_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.14
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.15
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.14
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.14
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.14
+  }
+ },
+ "SecEvalBase|CWE-022_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.37
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.39
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.36
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.38
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.37
+  }
+ },
+ "SecEvalBase|CWE-022_codeql_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "OutsideDestinationError: '../escape.txt' would be extracted to '/escape.txt', which is outside the destination",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalBase|CWE-078_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: argument of type 'NoneType' is not a container or iterable",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalBase|CWE-078_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.38
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.37
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.38
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "KeyError: 'subprocess'",
+   "seconds": 0.33
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.38
+  }
+ },
+ "SecEvalBase|CWE-079_codeql_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.39
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.38
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.37
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.38
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.38
+  }
+ },
+ "SecEvalBase|CWE-079_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.39
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.39
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.4
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TemplateNotFound: 'template.html' not found in search path: '.'",
+   "seconds": 0.37
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TemplateNotFound: 'template.html' not found in search path: '.'",
+   "seconds": 0.37
+  }
+ },
+ "SecEvalBase|CWE-080_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.4
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.4
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.41
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.37
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.38
+  }
+ },
+ "SecEvalBase|CWE-089_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'mysql'",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'mysql'",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-089_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'mysql'",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'mysql'",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-090_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'ldap'",
+   "seconds": 0.35
+  },
+  "insecure|Test-SP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'ldap'",
+   "seconds": 0.35
+  }
+ },
+ "SecEvalBase|CWE-090_codeql_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'ldap3'",
+   "seconds": 0.34
+  },
+  "insecure|Test-SP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'ldap3'",
+   "seconds": 0.35
+  }
+ },
+ "SecEvalBase|CWE-094_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.39
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.35
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.39
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.34
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.38
+  }
+ },
+ "SecEvalBase|CWE-094_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: expected bytes-like object, not str",
+   "seconds": 0.35
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: expected bytes-like object, not str",
+   "seconds": 0.36
+  }
+ },
+ "SecEvalBase|CWE-094_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.15
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.34
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "NameError: name 'pwn' is not defined",
+   "seconds": 0.34
+  }
+ },
+ "SecEvalBase|CWE-095_author_1.py": {
+  "secure|Test": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "AttributeError: module 'ast' has no attribute 'Num'",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "AttributeError: module 'ast' has no attribute 'Num'",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "AttributeError: module 'ast' has no attribute 'Num'",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalBase|CWE-099_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.4
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.41
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.41
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.38
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.4
+  }
+ },
+ "SecEvalBase|CWE-113_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.38
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.41
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.4
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.41
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.4
+  }
+ },
+ "SecEvalBase|CWE-113_sonar_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.4
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.42
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.43
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.43
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.42
+  }
+ },
+ "SecEvalBase|CWE-116_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.44
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.44
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.44
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "FileNotFoundError: [Errno 2] No such file or directory: '/tmp/files.txt'",
+   "seconds": 0.43
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "FileNotFoundError: [Errno 2] No such file or directory: '/tmp/files.txt'",
+   "seconds": 0.43
+  }
+ },
+ "SecEvalBase|CWE-116_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalBase|CWE-117_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalBase|CWE-117_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "IndexError: tuple index out of range",
+   "seconds": 0.34
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.35
+  }
+ },
+ "SecEvalBase|CWE-117_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.32
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.34
+  }
+ },
+ "SecEvalBase|CWE-1204_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.17
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: 'NoneType' object is not subscriptable",
+   "seconds": 0.16
+  }
+ },
+ "SecEvalBase|CWE-193_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "IndexError: list index out of range",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalBase|CWE-200_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalBase|CWE-209_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.32
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.34
+  }
+ },
+ "SecEvalBase|CWE-250_mitre_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalBase|CWE-252_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: object of type 'NoneType' has no len()",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-259_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-259_author_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'mysql'",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'mysql'",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-269_mitre_1.py": {
+  "secure|Test": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalBase|CWE-283_mitre_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.19
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalBase|CWE-295_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalBase|CWE-295_author_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'OpenSSL'",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'OpenSSL'",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalBase|CWE-306_pearce_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.37
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.37
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.38
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.38
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.41
+  }
+ },
+ "SecEvalBase|CWE-319_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.41
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.39
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.38
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.4
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.41
+  }
+ },
+ "SecEvalBase|CWE-319_author_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "AttributeError: 'types.SimpleNamespace' object has no attribute 'FTP'",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "RuntimeError: plaintext!",
+   "seconds": 0.12
+  }
+ },
+ "SecEvalBase|CWE-327_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "NameError: name 'DES' is not defined",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "NameError: name 'DES' is not defined",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalBase|CWE-327_codeql_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "AttributeError: 'FakeSSL' object has no attribute 'wrap_socket'",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "AttributeError: 'FakeSSL' object has no attribute 'wrap_socket'",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalBase|CWE-327_codeql_3.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-327_codeql_4.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: Strings must be encoded before hashing",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: Strings must be encoded before hashing",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalBase|CWE-329_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.18
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.17
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.17
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: check.<locals>.<lambda>.<locals>.<lambda>() missing 1 required positional argument: 's'",
+   "seconds": 0.16
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "KeyError: 'os'",
+   "seconds": 0.15
+  }
+ },
+ "SecEvalBase|CWE-330_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: object of type 'int' has no len()",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalBase|CWE-331_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalBase|CWE-339_mitre_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-347_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.27
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.26
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.25
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: check.<locals>.<lambda>() missing 1 required positional argument: 'k'",
+   "seconds": 0.26
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: check.<locals>.strict_decode() missing 1 required positional argument: 'k'",
+   "seconds": 0.25
+  }
+ },
+ "SecEvalBase|CWE-347_sonar_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.25
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.24
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.21
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.23
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.19
+  }
+ },
+ "SecEvalBase|CWE-347_sonar_3.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'python_jwt'",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'python_jwt'",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-367_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-377_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalBase|CWE-379_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: write() argument must be str, not bytes",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: write() argument must be str, not bytes",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalBase|CWE-385_mitre_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: 'int' object is not iterable",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalBase|CWE-400_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: upload() takes 0 positional arguments but 1 was given",
+   "seconds": 0.31
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: upload() takes 0 positional arguments but 1 was given",
+   "seconds": 0.3
+  }
+ },
+ "SecEvalBase|CWE-406_mitre_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "timeout",
+   "raw_status": "timeout",
+   "detail": "",
+   "seconds": 30.03
+  }
+ },
+ "SecEvalBase|CWE-414_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: can only concatenate str (not \"int\") to str",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: can only concatenate str (not \"int\") to str",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-425_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "FileNotFoundError: [Errno 2] No such file or directory: './static/./alice/2025-01-01'",
+   "seconds": 0.51
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "FileNotFoundError: [Errno 2] No such file or directory: './static/./../alice/2025-01-01'",
+   "seconds": 0.5
+  }
+ },
+ "SecEvalBase|CWE-434_pearce_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: upload_pdf() takes 0 positional arguments but 1 was given",
+   "seconds": 0.31
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: upload_pdf() takes 0 positional arguments but 1 was given",
+   "seconds": 0.31
+  }
+ },
+ "SecEvalBase|CWE-434_pearce_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: upload_img() takes 0 positional arguments but 1 was given",
+   "seconds": 0.31
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: upload_img() takes 0 positional arguments but 1 was given",
+   "seconds": 0.32
+  }
+ },
+ "SecEvalBase|CWE-454_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-462_mitre_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: '<' not supported between instances of 'NoneType' and 'str'",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "IndexError: pop from empty list",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalBase|CWE-477_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "AttributeError: module 'time' has no attribute 'clock'",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-502_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0x80 in position 0: invalid start byte",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalBase|CWE-502_mitre_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "NameError: name 'AuthFail' is not defined",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "NameError: name 'AuthFail' is not defined",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalBase|CWE-521_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.32
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.33
+  }
+ },
+ "SecEvalBase|CWE-521_sonar_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "no_entry",
+   "raw_status": "no_entry",
+   "detail": "entry point 'get_DATABASES' not defined",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "no_entry",
+   "raw_status": "no_entry",
+   "detail": "entry point 'get_DATABASES' not defined",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalBase|CWE-522_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.06
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'MySQLdb'",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'MySQLdb'",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalBase|CWE-522_pearce_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.06
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'MySQLdb'",
+   "seconds": 0.32
+  },
+  "insecure|Test-SP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'MySQLdb'",
+   "seconds": 0.32
+  }
+ },
+ "SecEvalBase|CWE-595_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalBase|CWE-601_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: redirect() got an unexpected keyword argument 'code'",
+   "seconds": 0.3
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: redirect() got an unexpected keyword argument 'code'",
+   "seconds": 0.31
+  }
+ },
+ "SecEvalBase|CWE-601_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "needs_config",
+   "raw_status": "error",
+   "detail": "ImproperlyConfigured: Requested setting DEFAULT_CHARSET, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.",
+   "seconds": 0.37
+  },
+  "insecure|Test-SP": {
+   "status": "needs_config",
+   "raw_status": "error",
+   "detail": "ImproperlyConfigured: Requested setting DEFAULT_CHARSET, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.",
+   "seconds": 0.36
+  }
+ },
+ "SecEvalBase|CWE-601_sonar_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "import_error",
+   "detail": "ValueError: URL rule 'flask_redirect' must start with a slash.",
+   "seconds": 0.33
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "import_error",
+   "detail": "ValueError: URL rule 'flask_redirect' must start with a slash.",
+   "seconds": 0.33
+  }
+ },
+ "SecEvalBase|CWE-601_sonar_3.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "import_error",
+   "detail": "ValueError: URL rule 'set_location_header' must start with a slash.",
+   "seconds": 0.32
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "import_error",
+   "detail": "ValueError: URL rule 'set_location_header' must start with a slash.",
+   "seconds": 0.31
+  }
+ },
+ "SecEvalBase|CWE-601_sonar_4.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "needs_config",
+   "raw_status": "error",
+   "detail": "ImproperlyConfigured: Requested setting DEFAULT_CHARSET, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.",
+   "seconds": 0.35
+  },
+  "insecure|Test-SP": {
+   "status": "needs_config",
+   "raw_status": "error",
+   "detail": "ImproperlyConfigured: Requested setting DEFAULT_CHARSET, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.",
+   "seconds": 0.37
+  }
+ },
+ "SecEvalBase|CWE-605_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "AttributeError: type object 'socket' has no attribute 'AF_INET'",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "AttributeError: type object 'socket' has no attribute 'AF_INET'",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-611_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.35
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.35
+  }
+ },
+ "SecEvalBase|CWE-611_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.32
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.33
+  }
+ },
+ "SecEvalBase|CWE-611_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.14
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.14
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalBase|CWE-611_sonar_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalBase|CWE-611_sonar_3.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "OSError: Error reading file 'resources/config.xml': failed to load \"resources/config.xml\": No such file or directory",
+   "seconds": 0.12
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "OSError: Error reading file 'resources/config.xml': failed to load \"resources/config.xml\": No such file or directory",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalBase|CWE-611_sonar_4.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "NameError: name 'MyHandler' is not defined",
+   "seconds": 0.13
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "NameError: name 'MyHandler' is not defined",
+   "seconds": 0.13
+  }
+ },
+ "SecEvalBase|CWE-641_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.33
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "RuntimeError: Working outside of request context.\n\nThis typically means that you attempted to use functionality that needed\nan active HTTP request. Consult the documentation on testing for\ninformation about how to avoid this problem.",
+   "seconds": 0.34
+  }
+ },
+ "SecEvalBase|CWE-643_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "import_error",
+   "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'users.xml'",
+   "seconds": 0.34
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "import_error",
+   "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'users.xml'",
+   "seconds": 0.34
+  }
+ },
+ "SecEvalBase|CWE-643_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.39
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "AttributeError: 'NoneType' object has no attribute 'xpath'",
+   "seconds": 0.37
+  }
+ },
+ "SecEvalBase|CWE-703_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalBase|CWE-703_author_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "StopIteration: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-703_author_3.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-730_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-730_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "import_error",
+   "detail": "NameError: name 'app' is not defined",
+   "seconds": 0.32
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "import_error",
+   "detail": "NameError: name 'app' is not defined",
+   "seconds": 0.31
+  }
+ },
+ "SecEvalBase|CWE-730_codeql_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "import_error",
+   "detail": "NameError: name 'app' is not defined",
+   "seconds": 0.31
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "import_error",
+   "detail": "NameError: name 'app' is not defined",
+   "seconds": 0.32
+  }
+ },
+ "SecEvalBase|CWE-732_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: stat: path should be string, bytes, os.PathLike or integer, not NoneType",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "RuntimeError: unsafe execution",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-759_mitre_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.14
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.13
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: byte indices must be integers or slices, not str",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-760_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.13
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.13
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.12
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: byte indices must be integers or slices, not str",
+   "seconds": 0.14
+  }
+ },
+ "SecEvalBase|CWE-776_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.32
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.33
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.34
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.34
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.31
+  }
+ },
+ "SecEvalBase|CWE-798_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'mysql'",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'mysql'",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalBase|CWE-798_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.36
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.37
+  }
+ },
+ "SecEvalBase|CWE-827_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalBase|CWE-835_author_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "timeout",
+   "raw_status": "timeout",
+   "detail": "",
+   "seconds": 30.03
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-841_mitre_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalBase|CWE-918_codeql_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.51
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.45
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.43
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.41
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "ConnectionError: HTTPSConnectionPool(host='evil.com', port=443): Max retries exceeded with url: /path.example.com/data/ (Caused by NameResolutionError(\"HTTPSConnection(host='evil.com', port=443): Failed to resolve 'evil.com' ([Errno -3] Temporary failure in name resolution)\"))",
+   "seconds": 0.44
+  }
+ },
+ "SecEvalBase|CWE-918_codeql_2.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.44
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.42
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.39
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.43
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /users/alice/private (Caused by NameResolutionError(\"HTTPSConnection(host='api.github.com', port=443): Failed to resolve 'api.github.com' ([Errno -3] Temporary failure in name resolution)\"))",
+   "seconds": 0.39
+  }
+ },
+ "SecEvalBase|CWE-941_mitre_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "NameError: name 'true' is not defined",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "NameError: name 'UDP_IP' is not defined",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalBase|CWE-943_sonar_1.py": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'boto3'",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "harness_error",
+   "raw_status": "import_error",
+   "detail": "ModuleNotFoundError: No module named 'boto3'",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-20_01": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.06
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-20_02": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-20_03": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalPlus|CWE-20_04": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-20_05": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-20_06": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalPlus|CWE-20_07": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalPlus|CWE-20_08": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-276_01": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalPlus|CWE-276_02": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-276_03": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-276_04": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.06
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-276_05": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-276_06": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-276_07": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-276_08": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalPlus|CWE-269_01": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalPlus|CWE-269_02": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-269_03": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalPlus|CWE-269_04": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-269_05": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-269_06": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-269_07": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-269_08": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-502_01": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "UnpicklingError: invalid load key, '{'.",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-502_02": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "ValueError: malformed node or string on line 1: Name(id='true', ctx=Load())",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-502_03": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "UnpicklingError: invalid load key, '{'.",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-502_04": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "ParseError: not well-formed (invalid token): line 1, column 0",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-502_05": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-502_06": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalPlus|CWE-502_07": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "UnpicklingError: invalid load key, '{'.",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-502_08": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "TypeError: a bytes-like object is required, not 'str'",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-94_01": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-94_02": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-94_03": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-94_04": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-94_05": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-94_06": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-94_07": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-94_08": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-78_01": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-78_02": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-78_03": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-78_04": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.13
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-78_05": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-78_06": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.12
+  }
+ },
+ "SecEvalPlus|CWE-78_07": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.12
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-78_08": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.14
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.15
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.15
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.14
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.15
+  }
+ },
+ "SecEvalPlus|CWE-89_01": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "ProgrammingError: Incorrect number of bindings supplied. The current statement uses 2, and there are 0 supplied.",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-89_02": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-89_03": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-89_04": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-89_05": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-89_06": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.07
+  }
+ },
+ "SecEvalPlus|CWE-89_07": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-89_08": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-434_01": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-434_02": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-434_03": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "FileNotFoundError: [Errno 2] No such file or directory: './Test/CWE-434_03/uploads/nested/x.jpg'",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-434_04": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-434_05": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-434_06": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-434_07": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.23
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.15
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.17
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "NameError: name 'os' is not defined",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-434_08": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-77_01": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-77_02": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-77_03": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-77_04": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.13
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.13
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.13
+  }
+ },
+ "SecEvalPlus|CWE-77_05": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-77_06": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-77_07": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.28
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.2
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.22
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.13
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-77_08": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.13
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.14
+  }
+ },
+ "SecEvalPlus|CWE-787_01": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-787_02": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-787_03": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-787_04": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-787_05": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-787_06": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-787_07": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-787_08": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-862/CWE-287/CWE-306/CWE-863_01": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-862/CWE-287/CWE-306/CWE-863_02": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-862/CWE-287/CWE-306/CWE-863_03": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-862/CWE-287/CWE-306/CWE-863_04": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-862/CWE-287/CWE-306/CWE-863_05": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-862/CWE-287/CWE-306/CWE-863_06": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-862/CWE-287/CWE-306/CWE-863_07": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-862/CWE-287/CWE-306/CWE-863_08": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-862/CWE-287/CWE-306/CWE-863_09": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-125_01": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-125_02": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-125_03": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-125_04": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-125_05": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "IndexError: list index out of range",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-125_06": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-125_07": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-125_08": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.12
+  }
+ },
+ "SecEvalPlus|CWE-22_01": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "UnboundLocalError: cannot access local variable 'file_path' where it is not associated with a value",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-22_02": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-22_03": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-22_04": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.12
+  }
+ },
+ "SecEvalPlus|CWE-22_05": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-22_06": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-22_07": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.12
+  }
+ },
+ "SecEvalPlus|CWE-22_08": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-79_01": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-79_02": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.12
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-79_03": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-79_04": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-79_05": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-79_06": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-79_07": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-79_08": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-20_09": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-20_10": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "ValueError: invalid literal for int() with base 10: 'z'",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-276_09": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-276_10": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-269_09": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-269_10": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-502_09": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "UnpicklingError: invalid load key, '{'.",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-502_10": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "UnpicklingError: invalid load key, '{'.",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-94_09": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "NameError: name 'csv' is not defined",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "NameError: name 'csv' is not defined",
+   "seconds": 0.06
+  }
+ },
+ "SecEvalPlus|CWE-94_10": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.07
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.08
+  }
+ },
+ "SecEvalPlus|CWE-78_09": {
+  "secure|Test": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "CalledProcessError: Command 'ping -c 1 127.0.0.1' returned non-zero exit status 2.",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-78_10": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-89_09": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "ProgrammingError: You can only execute one statement at a time.",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-89_10": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-434_09": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-434_10": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-77_09": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "CalledProcessError: Command 'ping -c 1 127.0.0.1' returned non-zero exit status 2.",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "CalledProcessError: Command 'ping -c 1 127.0.0.1' returned non-zero exit status 2.",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-77_10": {
+  "secure|Test": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'zip'",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'zip'",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'zip'",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "CalledProcessError: Command 'zip -r out.zip Test/CWE-77_10/srcdir' returned non-zero exit status 127.",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "CalledProcessError: Command 'zip -r out.zip Test/CWE-77_10/srcdir' returned non-zero exit status 127.",
+   "seconds": 0.12
+  }
+ },
+ "SecEvalPlus|CWE-787_09": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-787_10": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-862/CWE-287/CWE-306/CWE-863_10": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-125_09": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ },
+ "SecEvalPlus|CWE-125_10": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.08
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-22_09": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "error",
+   "detail": "FileNotFoundError: [Errno 2] No such file or directory: './Test/CWE-22_09/avatars/userA/missing.png'",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-22_10": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.09
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Raised an unexpected exception type | at: ",
+   "seconds": 0.1
+  }
+ },
+ "SecEvalPlus|CWE-79_09": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.12
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.11
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.11
+  }
+ },
+ "SecEvalPlus|CWE-79_10": {
+  "secure|Test": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.11
+  },
+  "secure|Test-FP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "secure|Test-SP": {
+   "status": "pass",
+   "raw_status": "pass",
+   "detail": "",
+   "seconds": 0.1
+  },
+  "insecure|Test-FP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError:  | at: ",
+   "seconds": 0.1
+  },
+  "insecure|Test-SP": {
+   "status": "fail",
+   "raw_status": "fail",
+   "detail": "AssertionError: Expected an exception but none was raised | at: ",
+   "seconds": 0.09
+  }
+ }
+}

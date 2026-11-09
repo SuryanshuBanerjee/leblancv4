@@ -1,0 +1,32 @@
+\section{Background and Related Work}\label{sec:related}
+
+\paragraph{Insecure generation.} Pearce et al.~\cite{pearce2022asleep} found that about 40\% of GitHub Copilot
+completions in security-relevant scenarios were vulnerable; a replication on a later Copilot found the Python share
+fall from 36.54\% to 27.25\%~\cite{majdinasab2023replication}. Yan et al.~\cite{yan2025guiding} measured eight
+models with CodeQL and report average target-CWE and any-vulnerability rates of 20.7\% and 33.4\% on SecurityEval,
+and found that a newer or larger model is not automatically safer. These numbers describe 2021--2024 assistants and
+static analysers; they are context for our baseline, not targets for it.
+
+\paragraph{Prompting for security.} SecuCoGen~\cite{wang2023secucogen} raised GPT-3.5's secure-and-correct rate
+(SEC@2) from 0.31 to 0.86 with a human-written, CWE-aware problem statement; CodeSecEval~\cite{wang2024codeseceval}
+reports Claude~3 Opus rising from 13.83 to 39.89 Pass@1 with a vulnerability-aware problem. Tony
+et al.~\cite{tony2024prompting} compared naive, CWE-specific and comprehensive security cues on GPT-3, GPT-3.5 and
+GPT-4 and found that the best variant differed by model. He et al.~\cite{he2024safecoder} compared a generic and a
+CWE-specific security instruction and reported that prompting did not significantly improve security for
+state-of-the-art instruction-tuned models. Our second research question replicates this generic-versus-specific
+comparison on current models and adds functional and token cost.
+
+\paragraph{Repair with analyser feedback.} FDSP~\cite{alrashedy2023fdsp} feeds Bandit output back to the model;
+HexaCoder~\cite{hajipour2024hexacoder} reports GPT-4-turbo repair rates of 42.66\% without and 63.33\% with a
+CodeQL report; DiSCo~\cite{hasan2025disco} found that one round of scanner feedback cut issues from 37.4\% to
+12.7\% in its synthetic data while three rounds over-engineered the code. Codexity~\cite{kim2024codexity}
+re-queries a model until a secure answer appears. We are not aware of a study that compares scanner-guided repair
+with a blind repair pass \emph{and} with token-matched resampling on the same outputs, scored by executable tests.
+
+\paragraph{Security and correctness together.} CODEGUARD+~\cite{fu2024codeguard} showed that a method could look
+71.91\% secure while only 29.14\% of its outputs were secure \emph{and} correct; secure-but-broken code is counted as
+success unless function is tested. CodeSecEval~\cite{wang2026codeseceval} provides executable functional and
+security tests for every task, which is why we use it.
+
+\paragraph{Scope.} Fine-tuning and decoding-time methods (SVEN, HexaCoder's training stage, DiSCo/LPO, constrained
+decoding) need weight or logit access. We study only what an API user can do: change the prompt, or post-process.

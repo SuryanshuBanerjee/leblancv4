@@ -1,0 +1,325 @@
+{
+ "eligible": 175,
+ "excluded": [
+  {
+   "key": "SecEvalBase|CWE-020_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-020_codeql_2.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-020_codeql_3.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-020_codeql_4.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-022_author_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-022_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-078_author_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-078_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-079_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-079_codeql_2.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-080_author_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-089_author_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-089_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-090_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-090_codeql_2.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-094_author_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-094_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-094_sonar_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-095_author_1.py",
+   "reason": "reference solution fails its own tests in our sandbox: secure|Test=error, secure|Test-FP=error, secure|Test-SP=error (AttributeError: module 'ast' has no attribute 'Num')"
+  },
+  {
+   "key": "SecEvalBase|CWE-099_sonar_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-113_sonar_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-113_sonar_2.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-116_author_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-117_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-117_sonar_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-1204_sonar_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-193_author_1.py",
+   "reason": "Test-SP does not detect the task's own insecure code"
+  },
+  {
+   "key": "SecEvalBase|CWE-200_author_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-209_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-250_mitre_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-259_author_2.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-269_mitre_1.py",
+   "reason": "reference solution fails its own tests in our sandbox: secure|Test=fail (AssertionError:  | at: )"
+  },
+  {
+   "key": "SecEvalBase|CWE-295_author_2.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-306_pearce_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-319_author_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-319_author_2.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-321_author_1.py",
+   "reason": "reference solution fails its own tests in our sandbox: secure|Test=import_error, secure|Test-FP=import_error, secure|Test-SP=import_error (ModuleNotFoundError: No module named 'canvasapi')"
+  },
+  {
+   "key": "SecEvalBase|CWE-321_author_2.py",
+   "reason": "reference solution fails its own tests in our sandbox: secure|Test=import_error, secure|Test-FP=import_error, secure|Test-SP=import_error (ModuleNotFoundError: No module named 'openai')"
+  },
+  {
+   "key": "SecEvalBase|CWE-327_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-327_codeql_2.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-329_sonar_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-331_author_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-339_mitre_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-347_sonar_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-347_sonar_2.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-377_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-379_sonar_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-385_mitre_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-406_mitre_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-462_mitre_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-477_author_1.py",
+   "reason": "Test-SP does not detect the task's own insecure code"
+  },
+  {
+   "key": "SecEvalBase|CWE-502_mitre_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-502_sonar_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-522_author_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-522_pearce_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-601_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-601_sonar_2.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-601_sonar_3.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-611_author_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-611_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-641_sonar_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-643_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-643_sonar_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-730_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-730_codeql_2.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-732_author_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-759_mitre_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-776_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-798_author_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-798_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-841_mitre_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-918_codeql_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-918_codeql_2.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-941_mitre_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalBase|CWE-943_sonar_1.py",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalPlus|CWE-77_10",
+   "reason": "reference solution fails its own tests in our sandbox: secure|Test=error, secure|Test-FP=error, secure|Test-SP=error (FileNotFoundError: [Errno 2] No such file or directory: 'zip')"
+  },
+  {
+   "key": "SecEvalPlus|CWE-78_09",
+   "reason": "reference solution fails its own tests in our sandbox: secure|Test=fail, secure|Test-FP=fail (AssertionError:  | at: )"
+  },
+  {
+   "key": "SecEvalPlus|CWE-79_06",
+   "reason": "Test-SP does not detect the task's own insecure code"
+  },
+  {
+   "key": "SecEvalPlus|CWE-862/CWE-287/CWE-306/CWE-863_05",
+   "reason": "tests inject mock objects into the solution's globals, so they only accept code that uses the same objects as the reference implementation"
+  },
+  {
+   "key": "SecEvalPlus|CWE-94_01",
+   "reason": "Test-SP does not detect the task's own insecure code"
+  }
+ ]
+}

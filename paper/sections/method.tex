@@ -1,0 +1,89 @@
+% Method and design. Every number here is either a fixed design parameter (config/study.json)
+% or comes from paper/numbers.json via paper/numbers.tex.
+\section{Study Design}\label{sec:design}
+Figure~\ref{fig:pipeline} shows the pipeline. Every output is stored with its prompt, code, findings, test
+results, tokens and cost in one database, from which all results are computed.
+
+\begin{figure}[H]\centering
+\resizebox{\textwidth}{!}{\input{figures/pipeline.tex}}
+\caption{The LeBlanc pipeline. Every task is generated under three prompt arms by three models, three times. Each
+output is judged by the static analysers and by the task's executable tests in an isolated sandbox. Fix strategies
+start from the stored plain output; scanner-guided repair feeds the analyser findings back to the model.}\label{fig:pipeline}
+\end{figure}
+
+\subsection{Tasks}
+We draw tasks from CodeSecEval~\cite{wang2026codeseceval}, an execution-based benchmark of 255 Python tasks
+over 77 CWE types. Each task supplies a prompt, an entry point, an insecure and a secure reference
+implementation, a functional test (\texttt{Test-FP}) and a security test (\texttt{Test-SP}) written by the
+benchmark authors. Its SecEvalBase subset (115 tasks) extends SecurityEval~\cite{siddiq2022securityeval};
+SecEvalPlus (140 tasks) covers CWE Top-25 types with natural-language prompts. We pin the Hugging Face revision
+and file hashes.
+
+Before any model was called we validated every task in our sandbox. A task is \emph{eligible} only if (i) its secure
+reference passes all of its own tests, (ii) its security test fails its own insecure reference, and (iii) none of its
+tests injects mock objects into the solution's global namespace. The third rule was added after a stress test showed
+that such tests accept only code that uses the reference's exact objects: for example, a fake AES module that
+supports only GCM mode rejects correct code that uses EAX. Of 255 tasks, 175 are eligible. We then drew, with a
+fixed seed, two tasks from each of SecEvalPlus's 14 CWE types and one task from each of the 28 CWE types with an
+eligible SecEvalBase task, giving \NTasks{} tasks over \NCwe{} CWE types. The remaining 119 eligible tasks are a
+held-out set used only to evaluate prompt-warning retrieval (Section~\ref{sec:enginea}).
+
+\subsection{Interventions}
+\paragraph{Prompt arms.} Every task is generated under three arms that differ only in a final paragraph appended
+to the prompt: \texttt{plain} (nothing), \texttt{generic} (``\GenericLine'') and \texttt{targeted} (one line naming
+the task's own CWE and the defence, e.g.\ ``Security note (CWE-89): use parameterised queries; never build SQL with
+string concatenation, \% formatting or f-strings.''). The targeted arm uses the task's known CWE, an oracle: it
+measures what the \emph{content} of a correct warning adds over generic priming, separately from whether a
+retriever could find that warning.
+
+\paragraph{Fix strategies.} Starting from the stored \texttt{plain} output of the same task, model and repetition,
+we compare three ways of fixing code after generation: \texttt{scan\_repair} sends the static-analysis findings,
+the original task and the code back to the same model and asks for a fix, re-scans, and repeats up to
+\MaxRounds{} rounds (outputs the analysers do not flag are left unchanged, at no cost); \texttt{blind\_repair}
+makes one call asking the model to find and fix vulnerabilities, with no analyser output; \texttt{resample}
+makes no new call but takes the plain outputs of the repetitions in turn, starting from this one, and keeps the
+first the analysers call clean. Resampling uses exactly the information scanner-guided repair uses, and its token
+cost is the sum of the samples drawn.
+
+\subsection{Models and decoding}
+We evaluate three cheap, current API models from three developers through OpenRouter: \texttt{gpt-oss-20b}
+(OpenAI, open weights, 3.6B active parameters), \texttt{gemini-3.5-flash-lite} (Google) and
+\texttt{deepseek-v4.1-flash} (DeepSeek, a large sparse mixture-of-experts model). Each model is restricted to
+named hosts with no fallback to other hosts (full-precision weights where offered), and the serving host of every
+call is recorded. All calls share one system prompt (return one fenced Python block; no \texttt{\_\_main\_\_}
+block, \texttt{app.run} or example usage), temperature \Temp, reasoning effort ``\Effort'' where the host honours
+it, and an output cap of \MaxTok{} tokens. Every task, arm and model is sampled \Reps{} times; repetitions are
+the outermost loop, so an interrupted run would still be balanced.
+
+\subsection{Judges}
+Each output is judged three independent ways.
+\emph{Static:} Bandit (medium and high severity) united with Semgrep (a pinned copy of the \texttt{p/python} pack,
+151 rules, ERROR and WARNING severities). Findings on demonstration scaffolding (top-level \texttt{\_\_main\_\_}
+blocks and \texttt{app.run} calls) are recorded but excluded from the primary static metric, and cross-tool
+duplicates are merged. Both analysers must run on every batch or the batch is retried.
+\emph{Dynamic security:} the task's security test, run against the output.
+\emph{Function:} the task's functional test.
+
+\paragraph{Lenient and strict test scoring.} The prompts ask the code to ``raise an appropriate exception'' without
+naming a class, yet the published tests require the reference's exact exception class. In our one-repetition
+rehearsal the largest single group of security-test failures was code that \emph{did} reject the attack input,
+with a different exception class. Our primary (\emph{lenient}) scoring therefore rewrites only the tests'
+\texttt{assert\_raises}-style helper calls to accept any exception; every requirement to reject an input and every
+check of a returned value is kept. Because a lenient security test can also be passed by code that merely crashes on
+the attack input, lenient security results use only the \NSpValid{} tasks on which the lenient security test still
+fails the insecure reference. The published (\emph{strict}) scoring is always reported alongside. Both rules were
+fixed using the reference implementations only, before the main run.
+
+\paragraph{Outcomes.} \emph{Works} = the functional test passes. \emph{Insecure (dynamic)} = the security test
+fails. \emph{Secure and works} = both pass, the secure-pass idea of CODEGUARD+~\cite{fu2024codeguard}.
+\emph{Flagged (static)} = at least one analyser finding outside scaffolding. Security outcomes exclude outputs
+without extractable code; functional outcomes count them as failures. All untrusted code runs inside a
+bubblewrap jail in WSL with no network, no access to the host's drives, and an empty environment.
+
+\subsection{Statistics and decision rules}
+The unit is one task on one model; repetitions are nested in tasks, so every interval is a cluster bootstrap over
+tasks (2{,}000 resamples, fixed seed). Paired contrasts (by task and repetition) use the exact McNemar test on
+discordant pairs, with Benjamini--Hochberg correction within each research question. Verdicts were fixed before
+the run: \emph{yes} if the reduction is at least 5 percentage points (pp) with adjusted $q<0.05$; \emph{no} if
+$|\Delta|<3$\,pp or the interval contains zero and lies within $\pm5$\,pp; \emph{ceiling} if the plain rate is
+below 10\%; \emph{insufficient} below 10 pairs; \emph{unclear} otherwise. Verdicts are per model and per metric.
